@@ -8,14 +8,31 @@
 
 import UIKit
 
+#if DEBUG
+import FLEX
+#endif
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private var wishListTableViewController: WishListTableViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        UINavigationBar.appearance().barStyle = .black
+        UINavigationBar.appearance().tintColor = UIColor.white
+        
+        #if DEBUG
+            //FLEXManager.shared().showExplorer()
+        #endif
+        
+        self.wishListTableViewController = WishListTableViewController(style: .grouped)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = UINavigationController(rootViewController: self.wishListTableViewController)
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
