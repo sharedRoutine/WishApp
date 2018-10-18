@@ -7,21 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D35D95851EBBFBE3B088673 /* Pods_WishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AA9C5A8E835F32E558A2FF /* Pods_WishApp.framework */; };
+		80C3C20A2516C52EB0746B35 /* Pods_ImportExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7771A0FD8577219A9D3980DB /* Pods_ImportExtension.framework */; };
 		DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E4652167640300DBD0A1 /* AppDelegate.swift */; };
-		DE02E4682167640300DBD0A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E4672167640300DBD0A1 /* ViewController.swift */; };
 		DE02E46B2167640300DBD0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02E4692167640300DBD0A1 /* Main.storyboard */; };
 		DE02E46D2167640500DBD0A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE02E46C2167640500DBD0A1 /* Assets.xcassets */; };
 		DE02E4702167640500DBD0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02E46E2167640500DBD0A1 /* LaunchScreen.storyboard */; };
+		DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */; };
+		DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E47C2167672A00DBD0A1 /* StringExtension.swift */; };
+		DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE523A5121709EB900436459 /* InfoTableViewController.swift */; };
+		DE57A44421779BFF008EDBAA /* CreditsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */; };
+		DE57A4462177AB18008EDBAA /* InfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */; };
+		DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4482177AE59008EDBAA /* WishApp.swift */; };
+		DE57A44B21788EC9008EDBAA /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A44A21788EC9008EDBAA /* SearchTableViewController.swift */; };
+		DE57A44F21789021008EDBAA /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A44E21789021008EDBAA /* iTunesSearchAPI.swift */; };
+		DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A45121789085008EDBAA /* AppSearchResult.swift */; };
+		DE57A45721789615008EDBAA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A45621789615008EDBAA /* App.swift */; };
+		DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
+		DE57A4652178D782008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
+		DEB7393021676CA50056E178 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7392F21676CA50056E178 /* ShareViewController.swift */; };
+		DEB7393321676CA50056E178 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB7393121676CA50056E178 /* MainInterface.storyboard */; };
+		DEB7393721676CA50056E178 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEB7392D21676CA50056E178 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEB73973216A0ECB0056E178 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73972216A0ECB0056E178 /* DatabaseManager.swift */; };
+		DEB73974216A0EEA0056E178 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73972216A0ECB0056E178 /* DatabaseManager.swift */; };
+		DEB73976216A14850056E178 /* WishListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73975216A14850056E178 /* WishListItem.swift */; };
+		DEB73977216A14CC0056E178 /* WishListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73975216A14850056E178 /* WishListItem.swift */; };
+		DEB7397A216A20A20056E178 /* ImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73979216A20A20056E178 /* ImportManager.swift */; };
+		DEB7397D216A229C0056E178 /* URLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7397C216A229C0056E178 /* URLApp.swift */; };
+		DEB7397F216A241E0056E178 /* AppStoreURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7397E216A241E0056E178 /* AppStoreURLResponse.swift */; };
+		DEB73980216A26C80056E178 /* ImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73979216A20A20056E178 /* ImportManager.swift */; };
+		DEB73981216A26F40056E178 /* AppStoreURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7397E216A241E0056E178 /* AppStoreURLResponse.swift */; };
+		DEB73982216A26F60056E178 /* URLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7397C216A229C0056E178 /* URLApp.swift */; };
+		DEB73984216A2A890056E178 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73983216A2A890056E178 /* ImageManager.swift */; };
+		DEB73985216ABD750056E178 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73983216A2A890056E178 /* ImageManager.swift */; };
+		DEB73989216AC0740056E178 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E47C2167672A00DBD0A1 /* StringExtension.swift */; };
+		DEB7398C216AC9E30056E178 /* WishListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */; };
+		DEB7398E216B61670056E178 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7398D216B61670056E178 /* UIColorExtension.swift */; };
+		DEB73996216BCB920056E178 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB73999216BCB920056E178 /* Localizable.strings */; };
+		DEB73997216BCB920056E178 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB73999216BCB920056E178 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DEB7393521676CA50056E178 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE02E45A2167640300DBD0A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEB7392C21676CA50056E178;
+			remoteInfo = ImportExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEB7393B21676CA50056E178 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DEB7393721676CA50056E178 /* ImportExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		071A5A20AAE6B9F6C1FC1D60 /* Pods-WishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.release.xcconfig"; sourceTree = "<group>"; };
+		38A62FEA0C1DC8242788E33A /* Pods-ImportExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		73AA9C5A8E835F32E558A2FF /* Pods_WishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7771A0FD8577219A9D3980DB /* Pods_ImportExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImportExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A028A42FDAA4E24B1F3804C8 /* Pods-ImportExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.release.xcconfig"; sourceTree = "<group>"; };
+		BE0C12CAE0E0EC74F57DE3DD /* Pods-WishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DE02E4622167640300DBD0A1 /* WishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02E4652167640300DBD0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE02E4672167640300DBD0A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE02E46A2167640300DBD0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE02E46C2167640500DBD0A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE02E46F2167640500DBD0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE02E4712167640500DBD0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
+		DE02E47C2167672A00DBD0A1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DE523A5121709EB900436459 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTableViewCell.swift; sourceTree = "<group>"; };
+		DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderView.swift; sourceTree = "<group>"; };
+		DE57A4482177AE59008EDBAA /* WishApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishApp.swift; sourceTree = "<group>"; };
+		DE57A44A21788EC9008EDBAA /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		DE57A44E21789021008EDBAA /* iTunesSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPI.swift; sourceTree = "<group>"; };
+		DE57A45121789085008EDBAA /* AppSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchResult.swift; sourceTree = "<group>"; };
+		DE57A45621789615008EDBAA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		DE57A4632178A4FE008EDBAA /* WishListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListable.swift; sourceTree = "<group>"; };
+		DEB7392D21676CA50056E178 /* ImportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEB7392F21676CA50056E178 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		DEB7393221676CA50056E178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DEB7393421676CA50056E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEB739702169F2380056E178 /* WishApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WishApp.entitlements; sourceTree = "<group>"; };
+		DEB73972216A0ECB0056E178 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		DEB73975216A14850056E178 /* WishListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItem.swift; sourceTree = "<group>"; };
+		DEB73978216A164A0056E178 /* ImportExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImportExtension.entitlements; sourceTree = "<group>"; };
+		DEB73979216A20A20056E178 /* ImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportManager.swift; sourceTree = "<group>"; };
+		DEB7397C216A229C0056E178 /* URLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLApp.swift; sourceTree = "<group>"; };
+		DEB7397E216A241E0056E178 /* AppStoreURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreURLResponse.swift; sourceTree = "<group>"; };
+		DEB73983216A2A890056E178 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		DEB73987216AC0180056E178 /* WishApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WishApp-Swift.h"; sourceTree = "<group>"; };
+		DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItemTableViewCell.swift; sourceTree = "<group>"; };
+		DEB7398D216B61670056E178 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DEB73998216BCB920056E178 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +118,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D35D95851EBBFBE3B088673 /* Pods_WishApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB7392A21676CA50056E178 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80C3C20A2516C52EB0746B35 /* Pods_ImportExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13B8E9829987F65A6FC81110 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73AA9C5A8E835F32E558A2FF /* Pods_WishApp.framework */,
+				7771A0FD8577219A9D3980DB /* Pods_ImportExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61BEA555D238441BBE69A1B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE0C12CAE0E0EC74F57DE3DD /* Pods-WishApp.debug.xcconfig */,
+				071A5A20AAE6B9F6C1FC1D60 /* Pods-WishApp.release.xcconfig */,
+				38A62FEA0C1DC8242788E33A /* Pods-ImportExtension.debug.xcconfig */,
+				A028A42FDAA4E24B1F3804C8 /* Pods-ImportExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DE02E4592167640300DBD0A1 = {
 			isa = PBXGroup;
 			children = (
+				DEB73987216AC0180056E178 /* WishApp-Swift.h */,
 				DE02E4642167640300DBD0A1 /* WishApp */,
+				DEB7392E21676CA50056E178 /* ImportExtension */,
 				DE02E4632167640300DBD0A1 /* Products */,
+				61BEA555D238441BBE69A1B1 /* Pods */,
+				13B8E9829987F65A6FC81110 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				DE02E4622167640300DBD0A1 /* WishApp.app */,
+				DEB7392D21676CA50056E178 /* ImportExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +177,125 @@
 		DE02E4642167640300DBD0A1 /* WishApp */ = {
 			isa = PBXGroup;
 			children = (
+				DEB739702169F2380056E178 /* WishApp.entitlements */,
 				DE02E4652167640300DBD0A1 /* AppDelegate.swift */,
-				DE02E4672167640300DBD0A1 /* ViewController.swift */,
+				DE57A44D21789010008EDBAA /* API */,
+				DE02E47B2167671A00DBD0A1 /* Extensions */,
+				DEB73971216A0EBE0056E178 /* Manager */,
+				DE02E47A2167668C00DBD0A1 /* Objects */,
+				DE57A4622178A49F008EDBAA /* Protocols */,
+				DEB7397B216A228A0056E178 /* Structs */,
+				DEB7398A216AC9C90056E178 /* Views */,
+				DE02E479216765D600DBD0A1 /* ViewControllers */,
 				DE02E4692167640300DBD0A1 /* Main.storyboard */,
 				DE02E46C2167640500DBD0A1 /* Assets.xcassets */,
 				DE02E46E2167640500DBD0A1 /* LaunchScreen.storyboard */,
 				DE02E4712167640500DBD0A1 /* Info.plist */,
+				DEB73999216BCB920056E178 /* Localizable.strings */,
 			);
 			path = WishApp;
+			sourceTree = "<group>";
+		};
+		DE02E479216765D600DBD0A1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE523A5121709EB900436459 /* InfoTableViewController.swift */,
+				DE57A44A21788EC9008EDBAA /* SearchTableViewController.swift */,
+				DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DE02E47A2167668C00DBD0A1 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DEB73975216A14850056E178 /* WishListItem.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		DE02E47B2167671A00DBD0A1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE02E47C2167672A00DBD0A1 /* StringExtension.swift */,
+				DEB7398D216B61670056E178 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE57A44221779BD8008EDBAA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */,
+				DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		DE57A44D21789010008EDBAA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DE57A44E21789021008EDBAA /* iTunesSearchAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DE57A45021789066008EDBAA /* iTunes */ = {
+			isa = PBXGroup;
+			children = (
+				DE57A45621789615008EDBAA /* App.swift */,
+				DEB7397E216A241E0056E178 /* AppStoreURLResponse.swift */,
+				DE57A45121789085008EDBAA /* AppSearchResult.swift */,
+				DEB7397C216A229C0056E178 /* URLApp.swift */,
+			);
+			path = iTunes;
+			sourceTree = "<group>";
+		};
+		DE57A4622178A49F008EDBAA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DE57A4632178A4FE008EDBAA /* WishListable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DEB7392E21676CA50056E178 /* ImportExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DEB73978216A164A0056E178 /* ImportExtension.entitlements */,
+				DEB7392F21676CA50056E178 /* ShareViewController.swift */,
+				DEB7393121676CA50056E178 /* MainInterface.storyboard */,
+				DEB7393421676CA50056E178 /* Info.plist */,
+			);
+			path = ImportExtension;
+			sourceTree = "<group>";
+		};
+		DEB73971216A0EBE0056E178 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DEB73972216A0ECB0056E178 /* DatabaseManager.swift */,
+				DEB73983216A2A890056E178 /* ImageManager.swift */,
+				DEB73979216A20A20056E178 /* ImportManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DEB7397B216A228A0056E178 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				DE57A45021789066008EDBAA /* iTunes */,
+				DE57A4482177AE59008EDBAA /* WishApp.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		DEB7398A216AC9C90056E178 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE57A44221779BD8008EDBAA /* TableViewCells */,
+				DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,18 +305,40 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE02E4742167640500DBD0A1 /* Build configuration list for PBXNativeTarget "WishApp" */;
 			buildPhases = (
+				1C1C5A244672781BF679A870 /* [CP] Check Pods Manifest.lock */,
 				DE02E45E2167640300DBD0A1 /* Sources */,
 				DE02E45F2167640300DBD0A1 /* Frameworks */,
 				DE02E4602167640300DBD0A1 /* Resources */,
+				DEB7393B21676CA50056E178 /* Embed App Extensions */,
+				6E0361AC2029BFA3144C274A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DEB7393621676CA50056E178 /* PBXTargetDependency */,
 			);
 			name = WishApp;
 			productName = WishApp;
 			productReference = DE02E4622167640300DBD0A1 /* WishApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DEB7392C21676CA50056E178 /* ImportExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEB7393821676CA50056E178 /* Build configuration list for PBXNativeTarget "ImportExtension" */;
+			buildPhases = (
+				2B3D90677E082122A313C37B /* [CP] Check Pods Manifest.lock */,
+				DEB7392921676CA50056E178 /* Sources */,
+				DEB7392A21676CA50056E178 /* Frameworks */,
+				DEB7392B21676CA50056E178 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImportExtension;
+			productName = ImportExtension;
+			productReference = DEB7392D21676CA50056E178 /* ImportExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +352,19 @@
 				TargetAttributes = {
 					DE02E4612167640300DBD0A1 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					DEB7392C21676CA50056E178 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -113,6 +382,7 @@
 			projectRoot = "";
 			targets = (
 				DE02E4612167640300DBD0A1 /* WishApp */,
+				DEB7392C21676CA50056E178 /* ImportExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -123,24 +393,151 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE02E4702167640500DBD0A1 /* LaunchScreen.storyboard in Resources */,
+				DEB73996216BCB920056E178 /* Localizable.strings in Resources */,
 				DE02E46D2167640500DBD0A1 /* Assets.xcassets in Resources */,
 				DE02E46B2167640300DBD0A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEB7392B21676CA50056E178 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB7393321676CA50056E178 /* MainInterface.storyboard in Resources */,
+				DEB73997216BCB920056E178 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C1C5A244672781BF679A870 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WishApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B3D90677E082122A313C37B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImportExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E0361AC2029BFA3144C274A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE02E45E2167640300DBD0A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE02E4682167640300DBD0A1 /* ViewController.swift in Sources */,
+				DE57A44F21789021008EDBAA /* iTunesSearchAPI.swift in Sources */,
+				DEB7397A216A20A20056E178 /* ImportManager.swift in Sources */,
+				DEB73973216A0ECB0056E178 /* DatabaseManager.swift in Sources */,
+				DE57A45721789615008EDBAA /* App.swift in Sources */,
+				DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */,
+				DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */,
+				DE57A4462177AB18008EDBAA /* InfoHeaderView.swift in Sources */,
+				DEB73984216A2A890056E178 /* ImageManager.swift in Sources */,
+				DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */,
+				DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */,
 				DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */,
+				DE57A44B21788EC9008EDBAA /* SearchTableViewController.swift in Sources */,
+				DEB7397F216A241E0056E178 /* AppStoreURLResponse.swift in Sources */,
+				DEB73976216A14850056E178 /* WishListItem.swift in Sources */,
+				DEB7398C216AC9E30056E178 /* WishListItemTableViewCell.swift in Sources */,
+				DEB7398E216B61670056E178 /* UIColorExtension.swift in Sources */,
+				DEB7397D216A229C0056E178 /* URLApp.swift in Sources */,
+				DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */,
+				DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */,
+				DE57A44421779BFF008EDBAA /* CreditsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEB7392921676CA50056E178 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEB73981216A26F40056E178 /* AppStoreURLResponse.swift in Sources */,
+				DEB73980216A26C80056E178 /* ImportManager.swift in Sources */,
+				DEB73985216ABD750056E178 /* ImageManager.swift in Sources */,
+				DEB73977216A14CC0056E178 /* WishListItem.swift in Sources */,
+				DE57A4652178D782008EDBAA /* WishListable.swift in Sources */,
+				DEB73989216AC0740056E178 /* StringExtension.swift in Sources */,
+				DEB73982216A26F60056E178 /* URLApp.swift in Sources */,
+				DEB73974216A0EEA0056E178 /* DatabaseManager.swift in Sources */,
+				DEB7393021676CA50056E178 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEB7393621676CA50056E178 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEB7392C21676CA50056E178 /* ImportExtension */;
+			targetProxy = DEB7393521676CA50056E178 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE02E4692167640300DBD0A1 /* Main.storyboard */ = {
@@ -159,6 +556,22 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		DEB7393121676CA50056E178 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB7393221676CA50056E178 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		DEB73999216BCB920056E178 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEB73998216BCB920056E178 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -166,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -213,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -227,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -268,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,35 +695,97 @@
 		};
 		DE02E4752167640500DBD0A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE0C12CAE0E0EC74F57DE3DD /* Pods-WishApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WishApp/WishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PE75LA624;
 				INFOPLIST_FILE = WishApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp;
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		DE02E4762167640500DBD0A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 071A5A20AAE6B9F6C1FC1D60 /* Pods-WishApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WishApp/WishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PE75LA624;
 				INFOPLIST_FILE = WishApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp;
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		DEB7393921676CA50056E178 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38A62FEA0C1DC8242788E33A /* Pods-ImportExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PE75LA624;
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp.ImportExtension;
+				PRODUCT_MODULE_NAME = ImportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEB7393A21676CA50056E178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A028A42FDAA4E24B1F3804C8 /* Pods-ImportExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PE75LA624;
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp.ImportExtension;
+				PRODUCT_MODULE_NAME = ImportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +808,15 @@
 			buildConfigurations = (
 				DE02E4752167640500DBD0A1 /* Debug */,
 				DE02E4762167640500DBD0A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEB7393821676CA50056E178 /* Build configuration list for PBXNativeTarget "ImportExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEB7393921676CA50056E178 /* Debug */,
+				DEB7393A21676CA50056E178 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
