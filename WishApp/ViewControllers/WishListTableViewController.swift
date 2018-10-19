@@ -131,16 +131,6 @@ class WishListTableViewController: UITableViewController {
         }
     }
     
-    override init(style: UITableView.Style) {
-        super.init(style: style)
-        
-        self.previousItemData = (items: Array(self.itemData.items), fulfilledItems: Array(self.itemData.fulfilledItems))
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -149,8 +139,6 @@ class WishListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.buildUI()
 
         self.title = "WISH_LIST".localized
         
