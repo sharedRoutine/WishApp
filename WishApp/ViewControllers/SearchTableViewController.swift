@@ -70,19 +70,20 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchResult?.apps.count ?? 0
+        return self.searchResult?.paidApps.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: WishListItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: "AppCell", for: indexPath) as! WishListItemTableViewCell
         
-        let app: App = self.searchResult!.apps[indexPath.row]
+        let apps: [App] = self.searchResult!.paidApps
+        let app: App = apps[indexPath.row]
         cell.itemNameLabel.text = app.name
         cell.itemDevelopedByLabel.text = app.developer
         cell.priceString = (app.isFree ? "FREE".localized : self.priceFormatter.string(from: NSNumber(value: app.price)))
         cell.iconImageView.sd_setImage(with: URL(string: app.iconFile), placeholderImage: nil, options: .highPriority, completed: nil)
-        cell.iconImageView.layer.cornerRadius = 8.0
-        cell.iconImageView.layer.masksToBounds = true
+        cell.shouldShowSeparator = indexPath.row != apps.count-1
+        cell.separatorColor = UIColor.dark
         return cell
     }
     
@@ -95,7 +96,7 @@ class SearchTableViewController: UITableViewController {
         
         let cell: WishListItemTableViewCell = tableView.cellForRow(at: indexPath) as! WishListItemTableViewCell
         
-        let app: App = self.searchResult!.apps[indexPath.row]
+        let app: App = self.searchResult!.paidApps[indexPath.row]
         let item: WishListItem = WishListItem(with: app)
         if let cellImage = cell.iconImageView.image, let fileName = ImageManager.shared.save(image: cellImage, for: item.bundleIdentifier) {
             item.imageName = fileName
@@ -103,11 +104,21 @@ class SearchTableViewController: UITableViewController {
         DatabaseManager.shared.write(object: item)
         self.navigationController?.popViewController(animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return " "
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
 }
 
 extension SearchTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchString: String = searchController.searchBar.text, searchString.count > 0 else {
+            self.searchResult = nil
+            self.tableView.reloadData()
             return
         }
         iTunesSearchAPI.shared.loadApps(for: searchString, limit: 10) { (_ result: AppSearchResult?) in
