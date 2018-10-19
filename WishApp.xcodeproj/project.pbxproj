@@ -25,6 +25,7 @@
 		DE57A45721789615008EDBAA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A45621789615008EDBAA /* App.swift */; };
 		DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
 		DE57A4652178D782008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
+		DEAF97CE217A694E0018BFDF /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */; };
 		DEB7393021676CA50056E178 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7392F21676CA50056E178 /* ShareViewController.swift */; };
 		DEB7393321676CA50056E178 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB7393121676CA50056E178 /* MainInterface.storyboard */; };
 		DEB7393721676CA50056E178 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEB7392D21676CA50056E178 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -95,6 +96,7 @@
 		DE57A45121789085008EDBAA /* AppSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchResult.swift; sourceTree = "<group>"; };
 		DE57A45621789615008EDBAA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		DE57A4632178A4FE008EDBAA /* WishListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListable.swift; sourceTree = "<group>"; };
+		DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		DEB7392D21676CA50056E178 /* ImportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB7392F21676CA50056E178 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		DEB7393221676CA50056E178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				DE02E46C2167640500DBD0A1 /* Assets.xcassets */,
 				DE02E46E2167640500DBD0A1 /* LaunchScreen.storyboard */,
 				DE02E4712167640500DBD0A1 /* Info.plist */,
+				DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */,
 				DEB73999216BCB920056E178 /* Localizable.strings */,
 			);
 			path = WishApp;
@@ -392,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAF97CE217A694E0018BFDF /* Acknowledgements.plist in Resources */,
 				DE02E4702167640500DBD0A1 /* LaunchScreen.storyboard in Resources */,
 				DEB73996216BCB920056E178 /* Localizable.strings in Resources */,
 				DE02E46D2167640500DBD0A1 /* Assets.xcassets in Resources */,
@@ -468,6 +472,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SUBLicenseViewController/SUBLicenseViewController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -477,6 +482,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SUBLicenseViewController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
