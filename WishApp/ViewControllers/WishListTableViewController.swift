@@ -42,6 +42,8 @@ class WishListTableViewController: UITableViewController {
     private func markItemChanges() -> ItemChanges {
         // if there is no previous data, we do not need to return the changes
         guard let previousData = self.previousItemData else {
+            // we need to initialize it, if it was nil
+            self.previousItemData = (items: Array(self.itemData.items), fulfilledItems: Array(self.itemData.fulfilledItems))
             return (deleted: [], inserted: [])
         }
         
