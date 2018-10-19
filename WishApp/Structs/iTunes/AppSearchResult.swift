@@ -12,6 +12,12 @@ struct AppSearchResult : Decodable {
    
     let apps: [App]
     
+    public var paidApps: [App] {
+        return self.apps.filter({ (app: App) -> Bool in
+            return !app.isFree
+        })
+    }
+    
     enum CodingKeys: String, CodingKey {
         case apps = "results"
     }
