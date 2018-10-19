@@ -16,6 +16,8 @@ class WishListItemTableViewCell: UITableViewCell {
     
     private var priceLabel: UILabel!
     
+    private var separatorView: UIView!
+    
     private let iconSize: CGSize = CGSize(width: 50.0, height: 50.0)
     
     public static var preferredCellHeight: CGFloat {
@@ -32,6 +34,24 @@ class WishListItemTableViewCell: UITableViewCell {
             } else {
                 self.accessoryView = nil
             }
+        }
+    }
+    
+    public var shouldShowSeparator: Bool {
+        get {
+            return !self.separatorView.isHidden
+        }
+        set {
+            self.separatorView.isHidden = !newValue
+        }
+    }
+    
+    public var separatorColor: UIColor? {
+        get {
+            return self.separatorView.backgroundColor
+        }
+        set {
+            self.separatorView.backgroundColor = newValue
         }
     }
     
@@ -56,6 +76,8 @@ class WishListItemTableViewCell: UITableViewCell {
         self.iconImageView = UIImageView(frame: .zero)
         self.iconImageView.contentMode = .scaleAspectFit
         self.iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.iconImageView.layer.cornerRadius = 10.0
+        self.iconImageView.layer.masksToBounds = true
         self.contentView.addSubview(self.iconImageView)
         
         self.iconImageView.leftAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leftAnchor).isActive = true
@@ -85,6 +107,17 @@ class WishListItemTableViewCell: UITableViewCell {
         self.itemDevelopedByLabel.leftAnchor.constraint(equalTo: self.itemNameLabel.leftAnchor).isActive = true
         self.itemDevelopedByLabel.rightAnchor.constraint(equalTo: self.itemNameLabel.rightAnchor).isActive = true
         self.itemDevelopedByLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 10.0).isActive = true
+        
+        self.separatorView = UIView(frame: .zero)
+        self.separatorView.isHidden = true
+        self.separatorView.backgroundColor = UIColor.darkJungleGreen
+        self.separatorView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.separatorView)
+        
+        self.separatorView.leftAnchor.constraint(equalTo: self.iconImageView.leftAnchor).isActive = true
+        self.separatorView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.separatorView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.separatorView.heightAnchor.constraint(equalToConstant: 1.5).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
