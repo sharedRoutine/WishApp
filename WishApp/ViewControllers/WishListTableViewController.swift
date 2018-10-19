@@ -267,12 +267,12 @@ class WishListTableViewController: UITableViewController {
             return nil
         }
         let markAction = UIContextualAction(style: .normal, title:  nil, handler: { (action: UIContextualAction, view: UIView, success:(Bool) -> Void) in
+            success(true)
             let item: WishListItem = self.itemData.items[indexPath.row]
             DatabaseManager.shared.write {
                 item.fulfilled = true
             }
             self.buildUI()
-            success(true)
         })
         markAction.image = UIImage(named: "MarkRow")
         markAction.backgroundColor = UIColor.nephritis
@@ -285,13 +285,8 @@ class WishListTableViewController: UITableViewController {
         let item: WishListItem = items[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title:  nil, handler: { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             success(true)
-            // delete row in buildUI instead of reloading both sections
             DatabaseManager.shared.delete(object: item)
             self.buildUI()
-//            tableView.beginUpdates()
-//            DatabaseManager.shared.delete(object: item)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            tableView.endUpdates()
         })
         deleteAction.image = UIImage(named: "DeleteRow")
         deleteAction.backgroundColor = UIColor.alizarin
