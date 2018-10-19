@@ -8,16 +8,20 @@
 
 import UIKit
 import StoreKit
+import RealmSwift
 
 class WishListTableViewController: UITableViewController {
 
     static private let items = DatabaseManager.shared.getObjects(for: WishListItem.self).sorted(byKeyPath: "name")
-    private var wishListItems = WishListTableViewController.items.filter("fulfilled = 0")
-    private var fulfilledItems = WishListTableViewController.items.filter("fulfilled = 1")
+    
+    private var itemData: (items: Results<WishListItem>, fulfilledItems: Results<WishListItem>) = (WishListTableViewController.items.filter("fulfilled = 0"), WishListTableViewController.items.filter("fulfilled = 1"))
+    private var previousItemData: (items: [WishListItem], fulfilledItems: [WishListItem])? = nil
     
     private var noContentLabel: UILabel?
     
     private var buildUIDispatchQueue: DispatchQueue = DispatchQueue(label: "wishapp.ui")
+    
+    private typealias ItemChanges = (deleted: [IndexPath], inserted: [IndexPath])
     
     private enum Section {
         case items
@@ -35,14 +39,56 @@ class WishListTableViewController: UITableViewController {
         return nil
     }
     
-    private func buildRows() {
+    private func markItemChanges() -> ItemChanges {
+        // if there is no previous data, we do not need to return the changes
+        guard let previousData = self.previousItemData else {
+            return (deleted: [], inserted: [])
+        }
+        
+        var deletes: [IndexPath] = []
+        var inserts: [IndexPath] = []
+        if let sectionIndex = self.sectionIndex(for: .items) {
+            // deletes from first section
+            for (index, item) in previousData.items.enumerated() {
+                if !self.itemData.items.contains(item) {
+                    deletes.append(IndexPath(row: index, section: sectionIndex))
+                }
+            }
+            // inserts from first section
+            for (index, item) in self.itemData.items.enumerated() {
+                if !previousData.items.contains(item) {
+                    inserts.append(IndexPath(row: index, section: sectionIndex))
+                }
+            }
+        }
+        if let sectionIndex = self.sectionIndex(for: .fulfilledItems) {
+            // deletes from second section
+            for (index, item) in previousData.fulfilledItems.enumerated() {
+                if !self.itemData.fulfilledItems.contains(item) {
+                    deletes.append(IndexPath(row: index, section: sectionIndex))
+                }
+            }
+            // inserts from second section
+            for (index, item) in self.itemData.fulfilledItems.enumerated() {
+                if !previousData.fulfilledItems.contains(item) {
+                    inserts.append(IndexPath(row: index, section: sectionIndex))
+                }
+            }
+        }
+        
+        // at the end we set the previous data to the now data
+        self.previousItemData = (items: Array(self.itemData.items), fulfilledItems: Array(self.itemData.fulfilledItems))
+        return (deleted: deletes, inserted: inserts)
+    }
+    
+    private func buildSections() {
         self.sectionData.removeAll()
         
-        if self.wishListItems.count > 0 {
+        if self.itemData.items.count > 0 {
             self.sectionData.append(.items)
         }
         
-        if self.fulfilledItems.count > 0 {
+        if self.itemData.fulfilledItems.count > 0 {
             self.sectionData.append(.fulfilledItems)
         }
     }
@@ -54,50 +100,64 @@ class WishListTableViewController: UITableViewController {
             let oldItemsSectionIndex: Int? = self.sectionIndex(for: .items)
             let oldFulfilledSectionIndex: Int? = self.sectionIndex(for: .fulfilledItems)
             
-            self.buildRows()
+            self.buildSections()
             
             let newItemsSectionIndex: Int? = self.sectionIndex(for: .items)
             let newFulfilledSectionIndex: Int? = self.sectionIndex(for: .fulfilledItems)
-            
+
             var insertSectionsIndices: [Int] = []
-            var reloadSectionIndices: [Int] = []
             var deleteSectionIndices: [Int] = []
-            
+
             if oldItemsSectionIndex == nil, let newSectionIndex = newItemsSectionIndex {
                 insertSectionsIndices.append(newSectionIndex)
-            } else if let oldSectionIndex = oldItemsSectionIndex, newItemsSectionIndex != nil {
-                reloadSectionIndices.append(oldSectionIndex)
             } else if let oldSectionIndex = oldItemsSectionIndex, newItemsSectionIndex == nil {
                 deleteSectionIndices.append(oldSectionIndex)
             }
-            
+
             if oldFulfilledSectionIndex == nil, let newSectionIndex = newFulfilledSectionIndex {
                 insertSectionsIndices.append(newSectionIndex)
-            } else if let oldSectionIndex = oldFulfilledSectionIndex, newFulfilledSectionIndex != nil {
-                reloadSectionIndices.append(oldSectionIndex)
             } else if let oldSectionIndex = oldFulfilledSectionIndex, newFulfilledSectionIndex == nil {
                 deleteSectionIndices.append(oldSectionIndex)
             }
             
-            self.tableView.insertSections(IndexSet(insertSectionsIndices), with: .fade)
-            self.tableView.reloadSections(IndexSet(reloadSectionIndices), with: .fade)
+            let itemChanges: ItemChanges = self.markItemChanges()
+            self.tableView.deleteRows(at: itemChanges.deleted, with: .fade)
+            self.tableView.insertRows(at: itemChanges.inserted, with: .fade)
+            
             self.tableView.deleteSections(IndexSet(deleteSectionIndices), with: .fade)
+            self.tableView.insertSections(IndexSet(insertSectionsIndices), with: .fade)
             
             self.tableView.endUpdates()
         }
     }
     
+    override init(style: UITableView.Style) {
+        super.init(style: style)
+        
+        self.previousItemData = (items: Array(self.itemData.items), fulfilledItems: Array(self.itemData.fulfilledItems))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.buildUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.buildRows()
+        self.buildUI()
 
         self.title = "WISH_LIST".localized
         
         self.tableView.register(WishListItemTableViewCell.self, forCellReuseIdentifier: "ItemCell")
         
         self.tableView.backgroundColor = UIColor.darkJungleGreen
-        self.tableView.separatorColor = UIColor.darkJungleGreen
+        self.tableView.separatorStyle = .none
         self.view.backgroundColor = UIColor.darkJungleGreen
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(handleInfoButton(pressed:)))
@@ -147,9 +207,9 @@ class WishListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let tableViewSection: Section = self.sectionData[section]
         if tableViewSection == .items {
-            return self.wishListItems.count
+            return self.itemData.items.count
         } else if tableViewSection == .fulfilledItems {
-            return self.fulfilledItems.count
+            return self.itemData.fulfilledItems.count
         }
         return 0
     }
@@ -159,7 +219,7 @@ class WishListTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.dark
         
         let tableViewSection: Section = self.sectionData[indexPath.section]
-        let items = (tableViewSection == .items ? self.wishListItems : self.fulfilledItems)
+        let items = (tableViewSection == .items ? self.itemData.items : self.itemData.fulfilledItems)
         
         let item: WishListItem = items[indexPath.row]
         cell.itemNameLabel.text = item.name
@@ -174,11 +234,17 @@ class WishListTableViewController: UITableViewController {
         cell.tintColor = UIColor.white
         
         if item.fulfilled {
+            
+            cell.shouldShowSeparator = indexPath.row != self.itemData.fulfilledItems.count-1
+            
             cell.priceString = nil
             cell.accessoryType = .checkmark
             cell.itemNameLabel.textColor = UIColor.lightGray
             cell.itemDevelopedByLabel.textColor = UIColor.lightGray
         } else {
+            
+            cell.shouldShowSeparator = indexPath.row != self.itemData.items.count-1
+            
             cell.priceString = (item.price > 0 ? item.priceString : "FREE".localized)
             cell.accessoryType = .none
             cell.itemNameLabel.textColor = UIColor.white
@@ -211,11 +277,10 @@ class WishListTableViewController: UITableViewController {
             return nil
         }
         let markAction = UIContextualAction(style: .normal, title:  nil, handler: { (action: UIContextualAction, view: UIView, success:(Bool) -> Void) in
-            let item: WishListItem = self.wishListItems[indexPath.row]
+            let item: WishListItem = self.itemData.items[indexPath.row]
             DatabaseManager.shared.write {
                 item.fulfilled = true
             }
-            // delete row, insert row at indexPath(for item: WishListItem, in section: Section), instead of reloading two sections
             self.buildUI()
             success(true)
         })
@@ -226,7 +291,7 @@ class WishListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let tableViewSection: Section = self.sectionData[indexPath.section]
-        let items = (tableViewSection == .items ? self.wishListItems : self.fulfilledItems)
+        let items = (tableViewSection == .items ? self.itemData.items : self.itemData.fulfilledItems)
         let item: WishListItem = items[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title:  nil, handler: { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             success(true)
@@ -250,7 +315,7 @@ class WishListTableViewController: UITableViewController {
         
         // maybe just open the appstore
         if tableViewSection == .items {
-            let item: WishListItem = self.wishListItems[indexPath.row]
+            let item: WishListItem = self.itemData.items[indexPath.row]
             if let appURL: URL = URL(string: item.appStoreURL), UIApplication.shared.canOpenURL(appURL) {
                 UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
             } else {
