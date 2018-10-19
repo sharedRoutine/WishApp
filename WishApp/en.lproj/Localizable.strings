@@ -20,3 +20,6 @@
 "SETTINGS" = "Settings";
 "DARK_MODE" = "Dark Mode";
 "SEARCH_APPS" = "Search for Apps";
+"SORT_ITEMS" = "Sort Items";
+"ITEM_EXISTS" = "Item exists";
+"%@ ALREADY_EXISTS" = "%@ already exists on your Wishlist";
