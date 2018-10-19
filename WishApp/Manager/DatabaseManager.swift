@@ -57,4 +57,8 @@ class DatabaseManager : NSObject {
     public func getObjects<Element: Object>(for type: Element.Type) -> Results<Element> {
         return self.realm.objects(type)
     }
+    
+    public func getObject<Element: Object, KeyType>(of type: Element.Type, for key: KeyType) -> Element? {
+        return self.realm.object(ofType: type, forPrimaryKey: key)
+    }
 }
