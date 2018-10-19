@@ -13,7 +13,6 @@
 "WISH_APP_INFO" = "Wish App Info";
 "DEVELOPER" = "Developer";
 "BUY_ME_A_COFFEE" = "☕️ Buy me a coffee";
-"DESIGNER_INFO" = "🎨 Follow the Designer";
 "LICENSES" = "📄 Licenses";
 "NO_APPS_ON_WISHLIST" = "You do not have any apps in your wishlist 😱\n\nUse the search button to add an app or visit the AppStore and add one from there 😎";
 "CREDITS" = "Credits";
@@ -23,3 +22,4 @@
 "SORT_ITEMS" = "Sort Items";
 "ITEM_EXISTS" = "Item exists";
 "%@ ALREADY_EXISTS" = "%@ already exists on your Wishlist";
+"LIKE_THE_APP" = "Do you like the App? 😇";
