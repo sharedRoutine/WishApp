@@ -40,35 +40,20 @@ class iTunesSearchAPI: NSObject {
     
     public func loadApps(for text: String, limit: Int = 10, completion: @escaping ((_ result: AppSearchResult?)->())) {
         let url: URL = self.generateAppSearchURL(for: text, limit: limit)
-        print("URL: \(url)")
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Swift.Error?) in
-            print("Data task completed")
             guard error == nil else {
                 DispatchQueue.main.async {
-                    print("Error: \(error!)")
                     completion(nil)
                 }
                 return
             }
-//            if let response = response {
-//                if let mimeType = response.mimeType {
-//                    if mimeType != "application/json" { // expecting json
-//                        print("We do not have JSON: \(mimeType)")
-//                        DispatchQueue.main.async {
-//                            completion(nil)
-//                        }
-//                        return
-//                    }
-//                }
-//            }
             if let data = data {
                 do {
                     let jsonData: AppSearchResult = try JSONDecoder().decode(AppSearchResult.self, from: data)
                     DispatchQueue.main.async {
-                        print("We got data yay")
                         completion(jsonData)
                     }
                 } catch {
