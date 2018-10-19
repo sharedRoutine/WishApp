@@ -95,14 +95,20 @@ class SearchTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let cell: WishListItemTableViewCell = tableView.cellForRow(at: indexPath) as! WishListItemTableViewCell
-        
         let app: App = self.searchResult!.paidApps[indexPath.row]
-        let item: WishListItem = WishListItem(with: app)
-        if let cellImage = cell.iconImageView.image, let fileName = ImageManager.shared.save(image: cellImage, for: item.bundleIdentifier) {
-            item.imageName = fileName
+        
+        if let item = DatabaseManager.shared.getObject(of: WishListItem.self, for: app.bundleIdentifier) {
+            let infoAlert: UIAlertController = UIAlertController(title: "ITEM_EXISTS".localized, message: String(format: "%@ ALREADY_EXISTS".localized, item.name), preferredStyle: .alert)
+            infoAlert.addAction(UIAlertAction(title: "Okay".localized, style: .cancel, handler: nil))
+            self.present(infoAlert, animated: true, completion: nil)
+        } else {
+            let item: WishListItem = WishListItem(with: app)
+            if let cellImage = cell.iconImageView.image, let fileName = ImageManager.shared.save(image: cellImage, for: item.bundleIdentifier) {
+                item.imageName = fileName
+            }
+            DatabaseManager.shared.write(object: item)
+            self.navigationController?.popViewController(animated: true)
         }
-        DatabaseManager.shared.write(object: item)
-        self.navigationController?.popViewController(animated: true)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
