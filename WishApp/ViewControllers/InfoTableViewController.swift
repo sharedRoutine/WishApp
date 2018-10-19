@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SUBLicenseViewController
 
 class InfoTableViewController: UITableViewController {
+    
+    private var darkModeSwitch: UISwitch = UISwitch(frame: .zero)
     
     private enum Section {
         case appInfo
@@ -22,9 +25,9 @@ class InfoTableViewController: UITableViewController {
         case developer
         case designer
         case devCoffee
-        case designerCoffee
         case licenses
         case darkMode
+        case itemSorting
     }
     
     private var tableViewData: [(section: Section, rows: [Row])] = []
@@ -32,15 +35,17 @@ class InfoTableViewController: UITableViewController {
     private func buildRows() {
         self.tableViewData.removeAll()
         
-        self.tableViewData.append((section: .settings, rows: [.darkMode]))
+        self.tableViewData.append((section: .settings, rows: [.darkMode, .itemSorting]))
         self.tableViewData.append((section: .credits, rows: [.developer, .designer]))
-        self.tableViewData.append((section: .buyMeACoffee, rows: [.devCoffee, .designerCoffee]))
+        self.tableViewData.append((section: .buyMeACoffee, rows: [.devCoffee]))
         self.tableViewData.append((section: .licenses, rows: [.licenses]))
         self.tableViewData.append((section: .appInfo, rows: []))
     }
     
     override init(style: UITableView.Style) {
         super.init(style: style)
+        
+        self.darkModeSwitch.isOn = true // settings
         
         self.title = "WISH_APP_INFO".localized
         
@@ -122,16 +127,24 @@ class InfoTableViewController: UITableViewController {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
         makeUI(for: cell)
         
+        cell.accessoryView = nil
+        
         switch section {
         case .settings:
-            cell.textLabel?.text = "DARK_MODE".localized
+            switch row {
+            case .darkMode:
+                cell.textLabel?.text = "DARK_MODE".localized
+                cell.accessoryView = self.darkModeSwitch
+            case .itemSorting:
+                cell.textLabel?.text = "SORT_ITEMS".localized
+            default:
+                break
+            }
             cell.accessoryType = .none
         case .buyMeACoffee:
             switch row {
             case .devCoffee:
                 cell.textLabel?.text = "BUY_ME_A_COFFEE".localized
-            case .designerCoffee:
-                cell.textLabel?.text = "DESIGNER_INFO".localized
             default:
                 break
             }
@@ -156,6 +169,8 @@ class InfoTableViewController: UITableViewController {
         switch section {
         case .credits:
             return "CREDITS".localized
+        case .buyMeACoffee:
+            return "LIKE_THE_APP".localized
         case .settings:
             return "SETTINGS".localized
         default:
@@ -184,9 +199,16 @@ class InfoTableViewController: UITableViewController {
         
         switch row {
         case .developer:
+            UIApplication.shared.open(URL(string: "https://twitter.com/sharedRoutine")!, options: [:], completionHandler: nil)
             break
         case .designer:
+            UIApplication.shared.open(URL(string: "https://twitter.com/AVIROK1")!, options: [:], completionHandler: nil)
             break
+        case .devCoffee:
+            UIApplication.shared.open(URL(string: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DMXRMVSS35UCQ")!, options: [:], completionHandler: nil)
+        case .licenses:
+            let licensesViewController: SUBLicenseViewController = SUBLicenseViewController()
+            self.navigationController?.pushViewController(licensesViewController, animated: true)
         default:
             break
         }
