@@ -14,6 +14,7 @@ class ImportManager: NSObject {
     
     public func `import`(fromURL url: URL, withCompletion completion: @escaping (_ item: WishListItem?)->()) -> Void {
         var request: URLRequest = URLRequest(url: url)
+        request.httpMethod = "POST"
         request.setValue("AppStore/3.0 iOS/10.0 model/iPhone8,1 (6; dt:89)", forHTTPHeaderField: "User-Agent")
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             guard let responseData = data else {
