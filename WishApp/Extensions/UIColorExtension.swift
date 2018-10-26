@@ -25,6 +25,5 @@ extension UIColor {
     static let alizarin: UIColor = UIColor(withHex: 0xe74c3c)
     static let darkJungleGreen: UIColor = UIColor(withHex: 0x1C1C1C)
     static let dark: UIColor = UIColor(withHex: 0x232323)
-    static let valhalla: UIColor = UIColor(withHex: 0x2C283D)
-    static let darkSlateBlue: UIColor = UIColor(withHex: 0x4C3C81)
+    static let peterRiver: UIColor = UIColor(withHex: 0x3498db)
 }
