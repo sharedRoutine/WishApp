@@ -9,7 +9,8 @@ target 'WishApp' do
   pod 'FLEX', '~> 2.0', :configurations => ['Debug']
   pod 'SDWebImage', '~> 4.0'
   pod "SUBLicenseViewController"
- 
+  pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
+
   post_install do | installer |
 	require 'fileutils'
 	FileUtils.cp_r('Pods/Target Support Files/Pods-WishApp/Pods-WishApp-acknowledgements.plist', 'WishApp/Acknowledgements.plist', 

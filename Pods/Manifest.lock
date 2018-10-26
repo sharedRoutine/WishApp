@@ -9,12 +9,14 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SUBLicenseViewController (1.0.1)
+  - SwiftyUserDefaults (4.0.0-alpha.1)
 
 DEPENDENCIES:
   - FLEX (~> 2.0)
   - RealmSwift
   - SDWebImage (~> 4.0)
   - SUBLicenseViewController
+  - SwiftyUserDefaults (= 4.0.0-alpha.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - RealmSwift
     - SDWebImage
     - SUBLicenseViewController
+    - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   RealmSwift: c990518b800e106d1f77099d3a4648c3b100337d
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SUBLicenseViewController: 7903a314448eeae9cf8e33127bad2019f7cb11d5
+  SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
 
-PODFILE CHECKSUM: 046344134b3af70418c38d5e9db62aaa9ec5f902
+PODFILE CHECKSUM: 701c30416afd4f62298f150ea8b1f60cbf4b7550
 
 COCOAPODS: 1.5.3
