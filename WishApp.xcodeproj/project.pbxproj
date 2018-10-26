@@ -27,7 +27,6 @@
 		DE57A4652178D782008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
 		DEAF97CE217A694E0018BFDF /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */; };
 		DEB7393021676CA50056E178 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7392F21676CA50056E178 /* ShareViewController.swift */; };
-		DEB7393321676CA50056E178 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB7393121676CA50056E178 /* MainInterface.storyboard */; };
 		DEB7393721676CA50056E178 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEB7392D21676CA50056E178 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DEB73973216A0ECB0056E178 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73972216A0ECB0056E178 /* DatabaseManager.swift */; };
 		DEB73974216A0EEA0056E178 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB73972216A0ECB0056E178 /* DatabaseManager.swift */; };
@@ -46,6 +45,13 @@
 		DEB7398E216B61670056E178 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7398D216B61670056E178 /* UIColorExtension.swift */; };
 		DEB73996216BCB920056E178 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB73999216BCB920056E178 /* Localizable.strings */; };
 		DEB73997216BCB920056E178 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEB73999216BCB920056E178 /* Localizable.strings */; };
+		DEB89B0221825ABF00139C48 /* DefaultsKeysExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB89B0121825ABF00139C48 /* DefaultsKeysExtension.swift */; };
+		DEB89B0421825AFD00139C48 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB89B0321825AFD00139C48 /* SettingsManager.swift */; };
+		DEB89B06218263D300139C48 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB89B05218263D300139C48 /* UIViewExtension.swift */; };
+		DEB89B072182648C00139C48 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB89B05218263D300139C48 /* UIViewExtension.swift */; };
+		DEB89B08218266BE00139C48 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7398D216B61670056E178 /* UIColorExtension.swift */; };
+		DEB89B0A2182731A00139C48 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB89B092182731A00139C48 /* MainInterface.storyboard */; };
+		DEB89B0C2183170500139C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB89B0B2183170500139C48 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +105,6 @@
 		DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		DEB7392D21676CA50056E178 /* ImportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB7392F21676CA50056E178 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		DEB7393221676CA50056E178 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		DEB7393421676CA50056E178 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB739702169F2380056E178 /* WishApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WishApp.entitlements; sourceTree = "<group>"; };
 		DEB73972216A0ECB0056E178 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -113,6 +118,11 @@
 		DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListItemTableViewCell.swift; sourceTree = "<group>"; };
 		DEB7398D216B61670056E178 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DEB73998216BCB920056E178 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEB89B0121825ABF00139C48 /* DefaultsKeysExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeysExtension.swift; sourceTree = "<group>"; };
+		DEB89B0321825AFD00139C48 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		DEB89B05218263D300139C48 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		DEB89B092182731A00139C48 /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		DEB89B0B2183170500139C48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,8 +230,10 @@
 		DE02E47B2167671A00DBD0A1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DE02E47C2167672A00DBD0A1 /* StringExtension.swift */,
 				DEB7398D216B61670056E178 /* UIColorExtension.swift */,
+				DEB89B0121825ABF00139C48 /* DefaultsKeysExtension.swift */,
+				DE02E47C2167672A00DBD0A1 /* StringExtension.swift */,
+				DEB89B05218263D300139C48 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,8 +279,9 @@
 			children = (
 				DEB73978216A164A0056E178 /* ImportExtension.entitlements */,
 				DEB7392F21676CA50056E178 /* ShareViewController.swift */,
-				DEB7393121676CA50056E178 /* MainInterface.storyboard */,
+				DEB89B092182731A00139C48 /* MainInterface.storyboard */,
 				DEB7393421676CA50056E178 /* Info.plist */,
+				DEB89B0B2183170500139C48 /* Assets.xcassets */,
 			);
 			path = ImportExtension;
 			sourceTree = "<group>";
@@ -279,6 +292,7 @@
 				DEB73972216A0ECB0056E178 /* DatabaseManager.swift */,
 				DEB73983216A2A890056E178 /* ImageManager.swift */,
 				DEB73979216A20A20056E178 /* ImportManager.swift */,
+				DEB89B0321825AFD00139C48 /* SettingsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -407,8 +421,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEB7393321676CA50056E178 /* MainInterface.storyboard in Resources */,
 				DEB73997216BCB920056E178 /* Localizable.strings in Resources */,
+				DEB89B0C2183170500139C48 /* Assets.xcassets in Resources */,
+				DEB89B0A2182731A00139C48 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +488,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SUBLicenseViewController/SUBLicenseViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -483,6 +499,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SUBLicenseViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,6 +523,7 @@
 				DEB73984216A2A890056E178 /* ImageManager.swift in Sources */,
 				DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */,
 				DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */,
+				DEB89B0221825ABF00139C48 /* DefaultsKeysExtension.swift in Sources */,
 				DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */,
 				DE57A44B21788EC9008EDBAA /* SearchTableViewController.swift in Sources */,
 				DEB7397F216A241E0056E178 /* AppStoreURLResponse.swift in Sources */,
@@ -514,7 +532,9 @@
 				DEB7398E216B61670056E178 /* UIColorExtension.swift in Sources */,
 				DEB7397D216A229C0056E178 /* URLApp.swift in Sources */,
 				DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */,
+				DEB89B06218263D300139C48 /* UIViewExtension.swift in Sources */,
 				DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */,
+				DEB89B0421825AFD00139C48 /* SettingsManager.swift in Sources */,
 				DE57A44421779BFF008EDBAA /* CreditsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,6 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB89B072182648C00139C48 /* UIViewExtension.swift in Sources */,
 				DEB73981216A26F40056E178 /* AppStoreURLResponse.swift in Sources */,
 				DEB73980216A26C80056E178 /* ImportManager.swift in Sources */,
 				DEB73985216ABD750056E178 /* ImageManager.swift in Sources */,
@@ -530,6 +551,7 @@
 				DE57A4652178D782008EDBAA /* WishListable.swift in Sources */,
 				DEB73989216AC0740056E178 /* StringExtension.swift in Sources */,
 				DEB73982216A26F60056E178 /* URLApp.swift in Sources */,
+				DEB89B08218266BE00139C48 /* UIColorExtension.swift in Sources */,
 				DEB73974216A0EEA0056E178 /* DatabaseManager.swift in Sources */,
 				DEB7393021676CA50056E178 /* ShareViewController.swift in Sources */,
 			);
@@ -560,14 +582,6 @@
 				DE02E46F2167640500DBD0A1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DEB7393121676CA50056E178 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DEB7393221676CA50056E178 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		DEB73999216BCB920056E178 /* Localizable.strings */ = {
