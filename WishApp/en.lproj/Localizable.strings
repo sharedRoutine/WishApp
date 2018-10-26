@@ -23,3 +23,7 @@
 "ITEM_EXISTS" = "Item exists";
 "%@ ALREADY_EXISTS" = "%@ already exists on your Wishlist";
 "LIKE_THE_APP" = "Do you like the App? 😇";
+"LOADING_APP_INFO" = "Loading App Info...";
+"APP_ADDED_TO_WISHLIST" = "Added to your Wishlist!";
+"NO_VALID_APP_FOUND" = "No valid app found ☹️";
+"NO_URL_FOUND" = "No valid URL found ☹️";
