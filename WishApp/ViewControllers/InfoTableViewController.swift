@@ -35,7 +35,7 @@ class InfoTableViewController: UITableViewController {
     private func buildRows() {
         self.tableViewData.removeAll()
         
-        self.tableViewData.append((section: .settings, rows: [.darkMode, .itemSorting]))
+//        self.tableViewData.append((section: .settings, rows: [.darkMode]))
         self.tableViewData.append((section: .credits, rows: [.developer, .designer]))
         self.tableViewData.append((section: .buyMeACoffee, rows: [.devCoffee]))
         self.tableViewData.append((section: .licenses, rows: [.licenses]))
@@ -45,7 +45,9 @@ class InfoTableViewController: UITableViewController {
     override init(style: UITableView.Style) {
         super.init(style: style)
         
-        self.darkModeSwitch.isOn = true // settings
+        self.darkModeSwitch.addTarget(self, action: #selector(handleDarkMode(changed:)), for: .valueChanged)
+        self.darkModeSwitch.isOn = SettingsManager.shared.darkModeEnabled
+        self.darkModeSwitch.onTintColor = UIColor.peterRiver
         
         self.title = "WISH_APP_INFO".localized
         
@@ -62,6 +64,11 @@ class InfoTableViewController: UITableViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc private func handleDarkMode(changed: UISwitch) {
+        let darkModeEnabled: Bool = SettingsManager.shared.darkModeEnabled
+        SettingsManager.shared.toggle(darkMode: !darkModeEnabled)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
