@@ -27,3 +27,7 @@
 "APP_ADDED_TO_WISHLIST" = "Added to your Wishlist!";
 "NO_VALID_APP_FOUND" = "No valid app found ☹️";
 "NO_URL_FOUND" = "No valid URL found ☹️";
+"BY_NAME" = "By Name";
+"BY_DATE" = "By Date";
+"BY_PRICE" = "By Price";
+"SELECT_SORT_OPTION" = "Select Sort Option";
