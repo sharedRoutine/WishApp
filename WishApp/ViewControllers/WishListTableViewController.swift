@@ -12,9 +12,9 @@ import RealmSwift
 
 class WishListTableViewController: UITableViewController {
 
-    static private let items = DatabaseManager.shared.getObjects(for: WishListItem.self).sorted(byKeyPath: "name")
+    static private let items = DatabaseManager.shared.getObjects(for: WishListItem.self)
     
-    private var itemData: (items: Results<WishListItem>, fulfilledItems: Results<WishListItem>) = (WishListTableViewController.items.filter("fulfilled = 0"), WishListTableViewController.items.filter("fulfilled = 1"))
+    private var itemData: ItemData = WishListTableViewController.composeItemData()
     private var previousItemData: (items: [WishListItem], fulfilledItems: [WishListItem])? = nil
     
     private var noContentLabel: UILabel?
@@ -22,6 +22,7 @@ class WishListTableViewController: UITableViewController {
     private var buildUIDispatchQueue: DispatchQueue = DispatchQueue(label: "wishapp.ui")
     
     private typealias ItemChanges = (deleted: [IndexPath], inserted: [IndexPath])
+    private typealias ItemData = (items: Results<WishListItem>, fulfilledItems: Results<WishListItem>)
     
     private enum Section {
         case items
@@ -37,6 +38,19 @@ class WishListTableViewController: UITableViewController {
             return index
         }
         return nil
+    }
+    
+    private static func composeItemData() -> ItemData {
+        let items = WishListTableViewController.items.filter("fulfilled = 0")
+        let fulfilledItems = WishListTableViewController.items.filter("fulfilled = 1")
+        switch SettingsManager.shared.sortOption {
+        case .byDate:
+            return (items.sorted(byKeyPath: "dateAdded"), fulfilledItems.sorted(byKeyPath: "dateCompleted"))
+        case .byPrice:
+            return (items.sorted(byKeyPath: "price"), fulfilledItems.sorted(byKeyPath: "name"))
+        case .byName:
+            return (items.sorted(byKeyPath: "name"), fulfilledItems.sorted(byKeyPath: "name"))
+        }
     }
     
     private func markItemChanges() -> ItemChanges {
@@ -141,6 +155,22 @@ class WishListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.sortOptionDidChange, object: nil, queue: OperationQueue.main) { (notification: Notification) in
+            self.itemData = WishListTableViewController.composeItemData()
+            self.previousItemData = nil
+            
+            var reloadSectionsIndices: [Int] = []
+            if let itemsSectionIndex: Int = self.sectionIndex(for: .items) {
+                reloadSectionsIndices.append(itemsSectionIndex)
+            }
+            if let fulfilledItemsSectionInset: Int = self.sectionIndex(for: .fulfilledItems) {
+                reloadSectionsIndices.append(fulfilledItemsSectionInset)
+            }
+            self.tableView.reloadSections(IndexSet(reloadSectionsIndices), with: .none)
+            
+            self.buildUI()
+        }
 
         self.title = "WISH_LIST".localized
         
@@ -271,6 +301,7 @@ class WishListTableViewController: UITableViewController {
             let item: WishListItem = self.itemData.items[indexPath.row]
             DatabaseManager.shared.write {
                 item.fulfilled = true
+                item.dateCompleted = Date()
             }
             self.buildUI()
         })
