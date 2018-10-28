@@ -35,7 +35,7 @@ class InfoTableViewController: UITableViewController {
     private func buildRows() {
         self.tableViewData.removeAll()
         
-//        self.tableViewData.append((section: .settings, rows: [.darkMode]))
+        self.tableViewData.append((section: .settings, rows: [.itemSorting]))
         self.tableViewData.append((section: .credits, rows: [.developer, .designer]))
         self.tableViewData.append((section: .buyMeACoffee, rows: [.devCoffee]))
         self.tableViewData.append((section: .licenses, rows: [.licenses]))
@@ -57,6 +57,8 @@ class InfoTableViewController: UITableViewController {
         
         self.tableView.register(CreditsTableViewCell.self, forCellReuseIdentifier: "CreditsCell")
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "InfoCell")
+        self.tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "SettingsCell")
+        
         self.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "VersionView")
         
         self.buildRows()
@@ -129,6 +131,27 @@ class InfoTableViewController: UITableViewController {
             }
             makeUI(for: creditsCell)
             return creditsCell
+        } else if section == .settings {
+            let cell: SettingsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsTableViewCell
+            makeUI(for: cell)
+            cell.accessoryView = nil
+            if row == .darkMode {
+                cell.textLabel?.text = "DARK_MODE".localized
+                cell.accessoryView = self.darkModeSwitch
+            } else if row == .itemSorting {
+                cell.textLabel?.text = "SORT_ITEMS".localized
+                let sortOption = SettingsManager.shared.sortOption
+                switch sortOption {
+                case .byName:
+                    cell.detailTextLabel?.text = "BY_NAME".localized
+                case .byDate:
+                    cell.detailTextLabel?.text = "BY_DATE".localized
+                case .byPrice:
+                    cell.detailTextLabel?.text = "BY_PRICE".localized
+                }
+            }
+            cell.accessoryType = .disclosureIndicator
+            return cell
         }
         
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath)
@@ -137,17 +160,6 @@ class InfoTableViewController: UITableViewController {
         cell.accessoryView = nil
         
         switch section {
-        case .settings:
-            switch row {
-            case .darkMode:
-                cell.textLabel?.text = "DARK_MODE".localized
-                cell.accessoryView = self.darkModeSwitch
-            case .itemSorting:
-                cell.textLabel?.text = "SORT_ITEMS".localized
-            default:
-                break
-            }
-            cell.accessoryType = .none
         case .buyMeACoffee:
             switch row {
             case .devCoffee:
@@ -213,6 +225,26 @@ class InfoTableViewController: UITableViewController {
             break
         case .devCoffee:
             UIApplication.shared.open(URL(string: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DMXRMVSS35UCQ")!, options: [:], completionHandler: nil)
+        case .itemSorting:
+            let titles = SortOption.allCases.map({ (opt: SortOption) -> String in
+                switch opt {
+                case .byName:
+                    return "BY_NAME".localized
+                case .byDate:
+                    return "BY_DATE".localized
+                case .byPrice:
+                    return "BY_PRICE".localized
+                }
+            })
+            let selectSortOptionViewController = SelectListViewController<SortOption>(withTitles: titles, values: SortOption.allCases, selectedValue: SettingsManager.shared.sortOption) { (opt: SortOption) in
+                SettingsManager.shared.sortOption = opt
+                
+                NotificationCenter.default.post(name: NSNotification.Name.sortOptionDidChange, object: nil)
+                
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
+            selectSortOptionViewController.title = "SELECT_SORT_OPTION".localized
+            self.navigationController?.pushViewController(selectSortOptionViewController, animated: true)
         case .licenses:
             let licensesViewController: SUBLicenseViewController = SUBLicenseViewController()
             self.navigationController?.pushViewController(licensesViewController, animated: true)
