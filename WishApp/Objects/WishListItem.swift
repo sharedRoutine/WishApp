@@ -9,14 +9,16 @@
 import RealmSwift
 
 class WishListItem: Object {
-    @objc dynamic var name: String = ""
-    @objc dynamic var developer: String = ""
-    @objc dynamic var storeIdentifier: String = ""
-    @objc dynamic var bundleIdentifier: String = ""
+    @objc dynamic var name: String!
+    @objc dynamic var developer: String!
+    @objc dynamic var storeIdentifier: String!
+    @objc dynamic var bundleIdentifier: String!
+    @objc dynamic var appStoreURL: String!
     @objc dynamic var imageName: String? = nil
     @objc dynamic var priceString: String? = nil
     @objc dynamic var price: Float = 0.0
-    @objc dynamic var appStoreURL: String = ""
+    @objc dynamic var dateAdded: Date = Date()
+    @objc dynamic var dateCompleted: Date? = nil
     
     @objc dynamic var fulfilled: Bool = false
     
