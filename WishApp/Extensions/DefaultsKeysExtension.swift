@@ -9,5 +9,6 @@
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    static let darkModeEnabled = DefaultsKey<Bool>("darkModeEnabled", defaultValue: true)
+    static let darkModeKey = DefaultsKey<Bool>("darkModeEnabled", defaultValue: true)
+    static let sortOptionKey = DefaultsKey<SortOption>("sortOption", defaultValue: SortOption.byName)
 }

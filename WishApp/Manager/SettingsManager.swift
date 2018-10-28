@@ -15,10 +15,19 @@ class SettingsManager: NSObject {
     
     public var darkModeEnabled: Bool {
         get {
-            return Defaults[.darkModeEnabled]
+            return Defaults[.darkModeKey]
         }
         set {
-            Defaults[.darkModeEnabled] = newValue
+            Defaults[.darkModeKey] = newValue
+        }
+    }
+    
+    public var sortOption: SortOption {
+        get {
+            return Defaults[.sortOptionKey]
+        }
+        set {
+            Defaults[.sortOptionKey] = newValue
         }
     }
     
