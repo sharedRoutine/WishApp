@@ -15,6 +15,11 @@
 		DE02E4702167640500DBD0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02E46E2167640500DBD0A1 /* LaunchScreen.storyboard */; };
 		DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */; };
 		DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E47C2167672A00DBD0A1 /* StringExtension.swift */; };
+		DE1D80EA2185BCED003C49DE /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80E92185BCED003C49DE /* SortOption.swift */; };
+		DE1D80ED2185BEAB003C49DE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */; };
+		DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EE2185C048003C49DE /* SelectListViewController.swift */; };
+		DE1D80F32185C593003C49DE /* SelectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */; };
+		DE1D80F52185C77C003C49DE /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80F42185C77C003C49DE /* NotificationNames.swift */; };
 		DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE523A5121709EB900436459 /* InfoTableViewController.swift */; };
 		DE57A44421779BFF008EDBAA /* CreditsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */; };
 		DE57A4462177AB18008EDBAA /* InfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */; };
@@ -93,6 +98,11 @@
 		DE02E4712167640500DBD0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
 		DE02E47C2167672A00DBD0A1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DE1D80E92185BCED003C49DE /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
+		DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		DE1D80EE2185C048003C49DE /* SelectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListViewController.swift; sourceTree = "<group>"; };
+		DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListTableViewCell.swift; sourceTree = "<group>"; };
+		DE1D80F42185C77C003C49DE /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		DE523A5121709EB900436459 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTableViewCell.swift; sourceTree = "<group>"; };
 		DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderView.swift; sourceTree = "<group>"; };
@@ -192,6 +202,7 @@
 				DEB739702169F2380056E178 /* WishApp.entitlements */,
 				DE02E4652167640300DBD0A1 /* AppDelegate.swift */,
 				DE57A44D21789010008EDBAA /* API */,
+				DE1D80E82185BCD3003C49DE /* Enums */,
 				DE02E47B2167671A00DBD0A1 /* Extensions */,
 				DEB73971216A0EBE0056E178 /* Manager */,
 				DE02E47A2167668C00DBD0A1 /* Objects */,
@@ -214,6 +225,7 @@
 			children = (
 				DE523A5121709EB900436459 /* InfoTableViewController.swift */,
 				DE57A44A21788EC9008EDBAA /* SearchTableViewController.swift */,
+				DE1D80EE2185C048003C49DE /* SelectListViewController.swift */,
 				DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */,
 			);
 			path = ViewControllers;
@@ -232,17 +244,28 @@
 			children = (
 				DEB7398D216B61670056E178 /* UIColorExtension.swift */,
 				DEB89B0121825ABF00139C48 /* DefaultsKeysExtension.swift */,
+				DE1D80F42185C77C003C49DE /* NotificationNames.swift */,
 				DE02E47C2167672A00DBD0A1 /* StringExtension.swift */,
 				DEB89B05218263D300139C48 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DE1D80E82185BCD3003C49DE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DE1D80E92185BCED003C49DE /* SortOption.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		DE57A44221779BD8008EDBAA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */,
 				DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */,
+				DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */,
+				DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */,
+				DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -516,6 +539,7 @@
 				DE57A44F21789021008EDBAA /* iTunesSearchAPI.swift in Sources */,
 				DEB7397A216A20A20056E178 /* ImportManager.swift in Sources */,
 				DEB73973216A0ECB0056E178 /* DatabaseManager.swift in Sources */,
+				DE1D80F32185C593003C49DE /* SelectListTableViewCell.swift in Sources */,
 				DE57A45721789615008EDBAA /* App.swift in Sources */,
 				DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */,
 				DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */,
@@ -523,8 +547,11 @@
 				DEB73984216A2A890056E178 /* ImageManager.swift in Sources */,
 				DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */,
 				DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */,
+				DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */,
 				DEB89B0221825ABF00139C48 /* DefaultsKeysExtension.swift in Sources */,
 				DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */,
+				DE1D80EA2185BCED003C49DE /* SortOption.swift in Sources */,
+				DE1D80ED2185BEAB003C49DE /* SettingsTableViewCell.swift in Sources */,
 				DE57A44B21788EC9008EDBAA /* SearchTableViewController.swift in Sources */,
 				DEB7397F216A241E0056E178 /* AppStoreURLResponse.swift in Sources */,
 				DEB73976216A14850056E178 /* WishListItem.swift in Sources */,
@@ -534,6 +561,7 @@
 				DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */,
 				DEB89B06218263D300139C48 /* UIViewExtension.swift in Sources */,
 				DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */,
+				DE1D80F52185C77C003C49DE /* NotificationNames.swift in Sources */,
 				DEB89B0421825AFD00139C48 /* SettingsManager.swift in Sources */,
 				DE57A44421779BFF008EDBAA /* CreditsTableViewCell.swift in Sources */,
 			);
