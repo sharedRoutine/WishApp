@@ -14,15 +14,18 @@ class DatabaseManager : NSObject {
     public static let shared: DatabaseManager = DatabaseManager()
     private var realm: Realm!
     
+    private var observationToken: NotificationToken? = nil
+    
     private override init() {
         super.init()
         
         var config = Realm.Configuration()
         config.fileURL = self.databaseURL
+        config.readOnly = TestingManager.shared.isTesting
         self.realm = try! Realm(configuration: config)
         
         #if WISH_APP
-        let _ = self.realm.observe { (notification: Realm.Notification, r: Realm) in
+        self.observationToken = self.realm.observe { (notification: Realm.Notification, r: Realm) in
             if notification == .didChange {
                 let appState = UIApplication.shared.applicationState
                 if appState == .background || appState == .inactive {
@@ -34,7 +37,12 @@ class DatabaseManager : NSObject {
     }
     
     public var databaseURL: URL? {
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sharedroutine.wishapp")?.appendingPathComponent("Library/Caches/WishApp.realm")
+        get {
+            if TestingManager.shared.isTesting {
+                return Bundle.main.bundleURL.appendingPathComponent("Testing", isDirectory: true).appendingPathComponent("Testing.realm")
+            }
+            return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sharedroutine.wishapp")?.appendingPathComponent("Library/Caches/WishApp.realm")
+        }
     }
     
     public func write(object: Object) {
@@ -71,5 +79,12 @@ class DatabaseManager : NSObject {
     
     public func getObject<Element: Object, KeyType>(of type: Element.Type, for key: KeyType) -> Element? {
         return self.realm.object(ofType: type, forPrimaryKey: key)
+    }
+    
+    public func prepareForTermination() {
+        guard let token = self.observationToken else {
+            return
+        }
+        token.invalidate()
     }
 }

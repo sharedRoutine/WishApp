@@ -15,7 +15,19 @@ class ImageManager: NSObject {
     
     public var iconsURL: URL? {
         get {
+            if TestingManager.shared.isTesting {
+                return Bundle.main.bundleURL.appendingPathComponent("Testing", isDirectory: true).appendingPathComponent("Icons", isDirectory: true)
+            }
             return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sharedroutine.wishapp")?.appendingPathComponent("Library/Caches/Icons")
+        }
+    }
+    
+    public func deleteImage(for item: WishListItem) {
+        if let iconsURL = self.iconsURL {
+            let iconURL: URL = iconsURL.appendingPathComponent(item.bundleIdentifier.sha1String).appendingPathExtension("png")
+            if FileManager.default.fileExists(atPath: iconURL.path) {
+                try? FileManager.default.removeItem(at: iconURL)
+            }
         }
     }
     
