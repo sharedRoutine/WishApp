@@ -45,9 +45,9 @@ class WishListTableViewController: UITableViewController {
         let fulfilledItems = WishListTableViewController.items.filter("fulfilled = 1")
         switch SettingsManager.shared.sortOption {
         case .byDate:
-            return (items.sorted(byKeyPath: "dateAdded"), fulfilledItems.sorted(byKeyPath: "dateCompleted"))
+            return (items.sorted(byKeyPath: "dateAdded", ascending: false), fulfilledItems.sorted(byKeyPath: "dateCompleted", ascending: false))
         case .byPrice:
-            return (items.sorted(byKeyPath: "price"), fulfilledItems.sorted(byKeyPath: "name"))
+            return (items.sorted(byKeyPath: "price", ascending: false), fulfilledItems.sorted(byKeyPath: "name"))
         case .byName:
             return (items.sorted(byKeyPath: "name"), fulfilledItems.sorted(byKeyPath: "name"))
         }
@@ -169,6 +169,10 @@ class WishListTableViewController: UITableViewController {
             }
             self.tableView.reloadSections(IndexSet(reloadSectionsIndices), with: .none)
             
+            self.buildUI()
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.needsWishListRefresh, object: nil, queue: OperationQueue.main) { (notification: Notification) in
             self.buildUI()
         }
 

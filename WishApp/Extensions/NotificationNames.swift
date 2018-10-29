@@ -10,4 +10,5 @@ import Foundation
 
 extension NSNotification.Name {
     static let sortOptionDidChange: NSNotification.Name = NSNotification.Name("SortOptionDidChangeNotification")
+    static let needsWishListRefresh: NSNotification.Name = NSNotification.Name("WishListNeedsRefreshingNotification")
 }

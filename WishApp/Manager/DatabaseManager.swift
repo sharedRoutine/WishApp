@@ -20,6 +20,17 @@ class DatabaseManager : NSObject {
         var config = Realm.Configuration()
         config.fileURL = self.databaseURL
         self.realm = try! Realm(configuration: config)
+        
+        #if WISH_APP
+        let _ = self.realm.observe { (notification: Realm.Notification, r: Realm) in
+            if notification == .didChange {
+                let appState = UIApplication.shared.applicationState
+                if appState == .background || appState == .inactive {
+                    NotificationCenter.default.post(name: NSNotification.Name.needsWishListRefresh, object: nil)
+                }
+            }
+        }
+        #endif
     }
     
     public var databaseURL: URL? {
