@@ -54,8 +54,6 @@ class SearchTableViewController: UITableViewController {
                 textField.tintColor = UIColor.white
                 textField.backgroundColor = UIColor.dark
                 textField.textColor = UIColor.white
-            } else {
-                print("No textfield found :(")
             }
         }
         
