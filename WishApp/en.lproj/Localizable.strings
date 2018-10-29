@@ -22,6 +22,7 @@
 "SORT_ITEMS" = "Sort Items";
 "ITEM_EXISTS" = "Item exists";
 "%@ ALREADY_EXISTS" = "%@ already exists on your Wishlist";
+"ALREADY_EXISTS" = "You already have this on your Wishlist";
 "LIKE_THE_APP" = "Do you like the App? 😇";
 "LOADING_APP_INFO" = "Loading App Info...";
 "APP_ADDED_TO_WISHLIST" = "Added to your Wishlist!";
