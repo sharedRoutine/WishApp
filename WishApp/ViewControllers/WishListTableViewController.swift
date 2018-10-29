@@ -19,6 +19,8 @@ class WishListTableViewController: UITableViewController {
     
     private var noContentLabel: UILabel?
     
+    private var priceFormatter: NumberFormatter = NumberFormatter()
+    
     private var buildUIDispatchQueue: DispatchQueue = DispatchQueue(label: "wishapp.ui")
     
     private typealias ItemChanges = (deleted: [IndexPath], inserted: [IndexPath])
@@ -156,6 +158,10 @@ class WishListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.priceFormatter.allowsFloats = true
+        self.priceFormatter.locale = Locale.current
+        self.priceFormatter.numberStyle = .currency
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.sortOptionDidChange, object: nil, queue: OperationQueue.main) { (notification: Notification) in
             self.itemData = WishListTableViewController.composeItemData()
             self.previousItemData = nil
@@ -248,6 +254,7 @@ class WishListTableViewController: UITableViewController {
         let item: WishListItem = items[indexPath.row]
         cell.itemNameLabel.text = item.name
         cell.itemDevelopedByLabel.text = item.developer
+        
         if let imageName = item.imageName, let iconsURL: URL = ImageManager.shared.iconsURL {
             let fileURL: URL = iconsURL.appendingPathComponent(imageName)
             if let imageData: Data = try? Data(contentsOf: fileURL) {
@@ -258,18 +265,14 @@ class WishListTableViewController: UITableViewController {
         cell.tintColor = UIColor.white
         
         if item.fulfilled {
-            
             cell.shouldShowSeparator = indexPath.row != self.itemData.fulfilledItems.count-1
-            
             cell.priceString = nil
             cell.accessoryType = .checkmark
             cell.itemNameLabel.textColor = UIColor.lightGray
             cell.itemDevelopedByLabel.textColor = UIColor.lightGray
         } else {
-            
             cell.shouldShowSeparator = indexPath.row != self.itemData.items.count-1
-            
-            cell.priceString = (item.price > 0 ? item.priceString : "FREE".localized)
+            cell.priceString = (item.price <= 0.0 ? "FREE".localized : self.priceFormatter.string(from: NSNumber(value: item.price)))
             cell.accessoryType = .none
             cell.itemNameLabel.textColor = UIColor.white
             cell.itemDevelopedByLabel.textColor = UIColor.white
@@ -288,7 +291,7 @@ class WishListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return !TestingManager.shared.isTesting
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -320,6 +323,7 @@ class WishListTableViewController: UITableViewController {
         let item: WishListItem = items[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title:  nil, handler: { (action: UIContextualAction, view: UIView, success: (Bool) -> Void) in
             success(true)
+            ImageManager.shared.deleteImage(for: item)
             DatabaseManager.shared.delete(object: item)
             self.buildUI()
         })
