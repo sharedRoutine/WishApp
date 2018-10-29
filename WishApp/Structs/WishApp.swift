@@ -15,7 +15,7 @@ struct WishApp {
                 return ""
             }
             guard let bundleVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else {
-                return ""
+                return shortVersionString
             }
             return "\(shortVersionString).\(bundleVersion)"
         }
