@@ -30,6 +30,8 @@
 		DE57A45721789615008EDBAA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A45621789615008EDBAA /* App.swift */; };
 		DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
 		DE57A4652178D782008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
+		DEA1EE12218750D20045B209 /* TestingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1EE11218750D20045B209 /* TestingManager.swift */; };
+		DEA1EE132187592D0045B209 /* TestingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA1EE11218750D20045B209 /* TestingManager.swift */; };
 		DEAF97CE217A694E0018BFDF /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */; };
 		DEB7393021676CA50056E178 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7392F21676CA50056E178 /* ShareViewController.swift */; };
 		DEB7393721676CA50056E178 /* ImportExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEB7392D21676CA50056E178 /* ImportExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -110,6 +112,17 @@
 		DE57A45121789085008EDBAA /* AppSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchResult.swift; sourceTree = "<group>"; };
 		DE57A45621789615008EDBAA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		DE57A4632178A4FE008EDBAA /* WishListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListable.swift; sourceTree = "<group>"; };
+		DEA1EDE32187456A0045B209 /* Testing.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Testing.realm; sourceTree = "<group>"; };
+		DEA1EDE72187458E0045B209 /* 372597141247a834d306c218cd70c6d6a4fe6e31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 372597141247a834d306c218cd70c6d6a4fe6e31.png; sourceTree = "<group>"; };
+		DEA1EDE82187458E0045B209 /* 7d9be00e2a1d369e2ed3190effb1bc94c93925b3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7d9be00e2a1d369e2ed3190effb1bc94c93925b3.png; sourceTree = "<group>"; };
+		DEA1EDEB2187458E0045B209 /* c4688636e7f7f6152dc6b9f8132a20d6a20126d7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c4688636e7f7f6152dc6b9f8132a20d6a20126d7.png; sourceTree = "<group>"; };
+		DEA1EDED2187458E0045B209 /* 582406fbee448cf81164aa9aec9b2fdb01ca7041.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 582406fbee448cf81164aa9aec9b2fdb01ca7041.png; sourceTree = "<group>"; };
+		DEA1EDEF2187458E0045B209 /* 6ff84acc679ad5ac16eae717f5f9a1323fdd0f60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6ff84acc679ad5ac16eae717f5f9a1323fdd0f60.png; sourceTree = "<group>"; };
+		DEA1EDF02187458E0045B209 /* 58a2a6546178b0b214c0703e80ec6b7089023b22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58a2a6546178b0b214c0703e80ec6b7089023b22.png; sourceTree = "<group>"; };
+		DEA1EDF12187458F0045B209 /* b4bd79b7c7da3c936bf8c776db696512c4161007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b4bd79b7c7da3c936bf8c776db696512c4161007.png; sourceTree = "<group>"; };
+		DEA1EDF22187458F0045B209 /* 3b52dc77e29cf911248251f9eba12b32a19c00ee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3b52dc77e29cf911248251f9eba12b32a19c00ee.png; sourceTree = "<group>"; };
+		DEA1EE03218745C20045B209 /* 51f0c73a5967c7568ba5dd2dc6838dcdf4fcf0ad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 51f0c73a5967c7568ba5dd2dc6838dcdf4fcf0ad.png; sourceTree = "<group>"; };
+		DEA1EE11218750D20045B209 /* TestingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingManager.swift; sourceTree = "<group>"; };
 		DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		DEB7392D21676CA50056E178 /* ImportExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ImportExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB7392F21676CA50056E178 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +218,7 @@
 				DE02E47A2167668C00DBD0A1 /* Objects */,
 				DE57A4622178A49F008EDBAA /* Protocols */,
 				DEB7397B216A228A0056E178 /* Structs */,
+				DEA1EDE1218745430045B209 /* Testing */,
 				DEB7398A216AC9C90056E178 /* Views */,
 				DE02E479216765D600DBD0A1 /* ViewControllers */,
 				DE02E4692167640300DBD0A1 /* Main.storyboard */,
@@ -293,6 +307,31 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		DEA1EDE1218745430045B209 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				DEA1EDE6218745720045B209 /* Icons */,
+				DEA1EDE32187456A0045B209 /* Testing.realm */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		DEA1EDE6218745720045B209 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DEA1EDF22187458F0045B209 /* 3b52dc77e29cf911248251f9eba12b32a19c00ee.png */,
+				DEA1EDEF2187458E0045B209 /* 6ff84acc679ad5ac16eae717f5f9a1323fdd0f60.png */,
+				DEA1EDE82187458E0045B209 /* 7d9be00e2a1d369e2ed3190effb1bc94c93925b3.png */,
+				DEA1EE03218745C20045B209 /* 51f0c73a5967c7568ba5dd2dc6838dcdf4fcf0ad.png */,
+				DEA1EDF02187458E0045B209 /* 58a2a6546178b0b214c0703e80ec6b7089023b22.png */,
+				DEA1EDED2187458E0045B209 /* 582406fbee448cf81164aa9aec9b2fdb01ca7041.png */,
+				DEA1EDE72187458E0045B209 /* 372597141247a834d306c218cd70c6d6a4fe6e31.png */,
+				DEA1EDF12187458F0045B209 /* b4bd79b7c7da3c936bf8c776db696512c4161007.png */,
+				DEA1EDEB2187458E0045B209 /* c4688636e7f7f6152dc6b9f8132a20d6a20126d7.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		DEB7392E21676CA50056E178 /* ImportExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +351,7 @@
 				DEB73983216A2A890056E178 /* ImageManager.swift */,
 				DEB73979216A20A20056E178 /* ImportManager.swift */,
 				DEB89B0321825AFD00139C48 /* SettingsManager.swift */,
+				DEA1EE11218750D20045B209 /* TestingManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -341,6 +381,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE02E4742167640500DBD0A1 /* Build configuration list for PBXNativeTarget "WishApp" */;
 			buildPhases = (
+				DEA1EE05218746740045B209 /* ShellScript */,
 				1C1C5A244672781BF679A870 /* [CP] Check Pods Manifest.lock */,
 				DE02E45E2167640300DBD0A1 /* Sources */,
 				DE02E45F2167640300DBD0A1 /* Frameworks */,
@@ -525,6 +566,23 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DEA1EE05218746740045B209 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Checking if we should copy testing data: ${WISH_APP_TESTING}\"\napp_path=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Testing\"\nif [ \"${WISH_APP_TESTING}\" == \"YES\" ]; then\ncp -r \"${PROJECT_DIR}/WishApp/Testing/Icons\" \"$app_path/Icons\"\ncp -r \"${PROJECT_DIR}/WishApp/Testing/Testing.realm\" \"$app_path\"\necho \"Copied testing data\"\nelse if [ \"${WISH_APP_TESTING}\" == \"NO\" ]; then\nif [ -d \"$app_path\" ]; then\nrm -rf \"$app_path\"\nfi\nfi\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -544,6 +602,7 @@
 				DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */,
 				DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */,
 				DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */,
+				DEA1EE12218750D20045B209 /* TestingManager.swift in Sources */,
 				DEB89B0221825ABF00139C48 /* DefaultsKeysExtension.swift in Sources */,
 				DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */,
 				DE1D80EA2185BCED003C49DE /* SortOption.swift in Sources */,
@@ -569,6 +628,7 @@
 				DEB73981216A26F40056E178 /* AppStoreURLResponse.swift in Sources */,
 				DEB73980216A26C80056E178 /* ImportManager.swift in Sources */,
 				DEB73985216ABD750056E178 /* ImageManager.swift in Sources */,
+				DEA1EE132187592D0045B209 /* TestingManager.swift in Sources */,
 				DEB73977216A14CC0056E178 /* WishListItem.swift in Sources */,
 				DE57A4652178D782008EDBAA /* WishListable.swift in Sources */,
 				DEB73989216AC0740056E178 /* StringExtension.swift in Sources */,
@@ -754,13 +814,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"WISH_APP\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp;
 				PRODUCT_MODULE_NAME = "$(PROJECT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				WISH_APP_TESTING = NO;
 			};
 			name = Debug;
 		};
@@ -783,13 +844,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"WISH_APP\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp;
 				PRODUCT_MODULE_NAME = "$(PROJECT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				WISH_APP_TESTING = NO;
 			};
 			name = Release;
 		};
