@@ -16,8 +16,12 @@ class ShareViewController: UIViewController {
     private var appImage: UIImage? = nil
     
     private var statusView: UIView!
+    private var contentView: UIView!
+    
     private var appIconImageView: UIImageView = UIImageView(frame: .zero)
     private var statusLabel: UILabel = UILabel(frame: .zero)
+    
+    private let viewHeight: CGFloat = 150.0
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,15 +32,19 @@ class ShareViewController: UIViewController {
         super.viewDidLoad()
         
         let bounds: CGRect = UIScreen.main.bounds
-        self.statusView = UIView(frame: CGRect(x: 0, y: bounds.size.height, width: bounds.width, height: 125.0))
+        self.statusView = UIView(frame: CGRect(x: 0, y: bounds.size.height, width: bounds.width, height: self.viewHeight))
         self.statusView.backgroundColor = UIColor.darkJungleGreen
+        
+        self.contentView = UIView(frame: CGRect.zero)
+        self.contentView.backgroundColor = UIColor.clear
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
         
         self.appIconImageView.image = self.appImage ?? UIImage(named: "DefaultIcon")
         self.appIconImageView.translatesAutoresizingMaskIntoConstraints = false
-        self.statusView.addSubview(self.appIconImageView)
+        self.contentView.addSubview(self.appIconImageView)
         
-        self.appIconImageView.centerXAnchor.constraint(equalTo: self.statusView.centerXAnchor).isActive = true
-        self.appIconImageView.topAnchor.constraint(equalTo: self.statusView.topAnchor, constant: 20.0).isActive = true
+        self.appIconImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor).isActive = true
+        self.appIconImageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
         self.appIconImageView.widthAnchor.constraint(equalToConstant: 60.0).isActive = true
         self.appIconImageView.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
         
@@ -45,12 +53,19 @@ class ShareViewController: UIViewController {
         self.statusLabel.textColor = UIColor.white
         self.statusLabel.textAlignment = .center
         self.statusLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.statusView.addSubview(self.statusLabel)
+        self.contentView.addSubview(self.statusLabel)
         
-        self.statusLabel.centerXAnchor.constraint(equalTo: self.appIconImageView.centerXAnchor).isActive = true
         self.statusLabel.topAnchor.constraint(equalTo: self.appIconImageView.bottomAnchor, constant: 10.0).isActive = true
-        self.statusLabel.widthAnchor.constraint(equalTo: self.statusView.widthAnchor).isActive = true
+        self.statusLabel.centerXAnchor.constraint(equalTo: self.appIconImageView.centerXAnchor).isActive = true
+        self.statusLabel.widthAnchor.constraint(equalTo: self.contentView.widthAnchor).isActive = true
         self.statusLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 10.0).isActive = true
+        
+        self.statusView.addSubview(self.contentView)
+        
+        self.contentView.centerYAnchor.constraint(equalTo: self.statusView.centerYAnchor).isActive = true
+        self.contentView.centerXAnchor.constraint(equalTo: self.statusView.centerXAnchor).isActive = true
+        self.contentView.widthAnchor.constraint(equalTo: self.statusView.widthAnchor).isActive = true
+        self.contentView.bottomAnchor.constraint(equalTo: self.statusLabel.bottomAnchor).isActive = true
         
         self.view.addSubview(self.statusView)
         
@@ -124,13 +139,14 @@ class ShareViewController: UIViewController {
                 
                 if let image = self.appImage, let fileName = ImageManager.shared.save(image: image, for: wishListItem.bundleIdentifier) {
                     wishListItem.imageName = fileName
-                } else {
-                    wishListItem.imageName = "default"
                 }
                 
-                self.statusLabel.text = "APP_ADDED_TO_WISHLIST".localized
-                DatabaseManager.shared.write(object: wishListItem)
-                
+                if let _ = DatabaseManager.shared.getObject(of: WishListItem.self, for: wishListItem.bundleIdentifier) {
+                    self.statusLabel.text = "ALREADY_EXISTS".localized
+                } else {
+                    self.statusLabel.text = "APP_ADDED_TO_WISHLIST".localized
+                    DatabaseManager.shared.write(object: wishListItem)
+                }
                 self.animateOut()
             } else {
                 self.statusLabel.text = "NO_VALID_APP_FOUND".localized
