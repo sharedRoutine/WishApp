@@ -9,15 +9,6 @@
 import Foundation
 
 public protocol WishListable {
-    /*
-     self.appStoreURL = app.appStoreURL
-     self.priceString = app.offers.first?.priceFormatted
-     self.price = app.offers.first?.price ?? 0.0
-     self.name = app.name
-     self.developer = app.developerName
-     self.storeIdentifier = app.identifier
-     self.bundleIdentifier = app.bundleIdentifier
- */
     var appStoreURL: String {get}
     var priceString: String? {get}
     var price: Float {get}
