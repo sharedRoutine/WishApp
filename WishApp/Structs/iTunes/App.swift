@@ -13,7 +13,6 @@ struct App : Decodable, WishListable {
     let appStoreURL: String
     let developer: String
     let bundleIdentifier: String
-    let priceString: String?
     let name: String
     let price: Float
     let iconFile: String
@@ -26,7 +25,6 @@ struct App : Decodable, WishListable {
     enum CodingKeys: String, CodingKey {
         case name = "trackName"
         case price
-        case priceString = "formattedPrice"
         case iconFile = "artworkUrl100"
         case developer = "artistName"
         case bundleIdentifier = "bundleId"
@@ -41,11 +39,6 @@ struct App : Decodable, WishListable {
             self.price = try container.decode(Float.self, forKey: .price)
         } else {
             self.price = 0.0
-        }
-        if container.contains(.priceString) {
-            self.priceString = try container.decode(String.self, forKey: .priceString)
-        } else {
-            self.priceString = nil
         }
         self.iconFile = try container.decode(String.self, forKey: .iconFile)
         self.developer = try container.decode(String.self, forKey: .developer)

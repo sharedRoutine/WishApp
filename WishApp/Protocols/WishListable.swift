@@ -10,7 +10,6 @@ import Foundation
 
 public protocol WishListable {
     var appStoreURL: String {get}
-    var priceString: String? {get}
     var price: Float {get}
     var name: String {get}
     var developer: String {get}

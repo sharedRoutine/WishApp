@@ -10,10 +10,6 @@ import Foundation
 
 struct URLApp : Decodable, WishListable {
     
-    var priceString: String? {
-        return self.offers.first?.priceFormatted
-    }
-    
     var price: Float {
         return self.offers.first?.price ?? 0.0
     }

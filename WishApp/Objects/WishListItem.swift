@@ -15,7 +15,6 @@ class WishListItem: Object {
     @objc dynamic var bundleIdentifier: String!
     @objc dynamic var appStoreURL: String!
     @objc dynamic var imageName: String? = nil
-    @objc dynamic var priceString: String? = nil
     @objc dynamic var price: Float = 0.0
     @objc dynamic var dateAdded: Date = Date()
     @objc dynamic var dateCompleted: Date? = nil
@@ -26,7 +25,6 @@ class WishListItem: Object {
         self.init()
         
         self.appStoreURL = app.appStoreURL
-        self.priceString = app.priceString
         self.price = app.price
         self.name = app.name
         self.developer = app.developer
