@@ -18,13 +18,11 @@ struct URLApp : Decodable, WishListable {
         return self.offers.first?.price ?? 0.0
     }
     
-    var storeIdentifier: String {
-        return self.identifier
-    }
-    
+    let storeIdentifier: String
     let developer: String
     let appStoreURL: String
     let bundleIdentifier: String
+    let name: String
     
     struct Offer : Decodable {
         let priceFormatted: String
@@ -36,15 +34,13 @@ struct URLApp : Decodable, WishListable {
         }
     }
     
-    let name: String
-    let identifier: String
     let offers: [Offer]
     
     enum CodingKeys: String, CodingKey {
         case name
         case developer = "artistName"
         case bundleIdentifier = "bundleId"
-        case identifier = "id"
+        case storeIdentifier = "id"
         case appStoreURL = "url"
         case offers
     }
