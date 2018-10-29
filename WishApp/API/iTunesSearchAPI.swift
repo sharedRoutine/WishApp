@@ -32,7 +32,6 @@ class iTunesSearchAPI: NSObject {
         if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
             queryItems.append(URLQueryItem(name: "country", value: countryCode))
         }
-        queryItems.append(URLQueryItem(name: "lang", value: Locale.current.identifier.lowercased()))
         var components: URLComponents = URLComponents(url: self.apiURL, resolvingAgainstBaseURL: false)!
         components.queryItems = queryItems
         return components.url!
