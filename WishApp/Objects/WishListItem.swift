@@ -23,7 +23,10 @@ class WishListItem: Object {
     
     required convenience init(with app: WishListable) {
         self.init()
-        
+        self.update(with: app)
+    }
+    
+    public func update(with app: WishListable) {
         self.appStoreURL = app.appStoreURL
         self.price = app.price
         self.name = app.name
