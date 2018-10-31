@@ -1,1 +1,4 @@
 /Podfile.lock
+/fastlane/screenshots
+/fastlane/DerivedData
+/Gemfile.lock
