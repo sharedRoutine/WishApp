@@ -89,7 +89,7 @@ class WishListItemTableViewCell: UITableViewCell {
         self.itemNameLabel.textColor = UIColor.white
         self.itemNameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         self.itemNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.itemNameLabel.lineBreakMode = .byTruncatingMiddle
+        self.itemNameLabel.lineBreakMode = .byTruncatingTail
         self.contentView.addSubview(self.itemNameLabel)
         
         self.itemNameLabel.bottomAnchor.constraint(equalTo: self.iconImageView.centerYAnchor).isActive = true
