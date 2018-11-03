@@ -1,6 +1,0 @@
-framework module SUBLicenseViewController {
-  umbrella header "SUBLicenseViewController-umbrella.h"
-
-  export *
-  module * { export * }
-}

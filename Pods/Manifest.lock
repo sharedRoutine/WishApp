@@ -1,40 +1,26 @@
 PODS:
-  - FLEX (2.4.0)
-  - Realm (3.8.0):
-    - Realm/Headers (= 3.8.0)
-  - Realm/Headers (3.8.0)
-  - RealmSwift (3.8.0):
-    - Realm (= 3.8.0)
+  - MBProgressHUD (1.1.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - SUBLicenseViewController (1.0.1)
   - SwiftyUserDefaults (4.0.0-alpha.1)
 
 DEPENDENCIES:
-  - FLEX (~> 2.0)
-  - RealmSwift
+  - MBProgressHUD (~> 1.1.0)
   - SDWebImage (~> 4.0)
-  - SUBLicenseViewController
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - FLEX
-    - Realm
-    - RealmSwift
+    - MBProgressHUD
     - SDWebImage
-    - SUBLicenseViewController
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
-  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
-  Realm: 3fdae59de78838064e9f77638d7cdb7b8cff9dc8
-  RealmSwift: c990518b800e106d1f77099d3a4648c3b100337d
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  SUBLicenseViewController: 7903a314448eeae9cf8e33127bad2019f7cb11d5
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
 
-PODFILE CHECKSUM: 701c30416afd4f62298f150ea8b1f60cbf4b7550
+PODFILE CHECKSUM: 7f069695fd9384953997422ce5693d11d102e2be
 
 COCOAPODS: 1.5.3
