@@ -7,19 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D35D95851EBBFBE3B088673 /* Pods_WishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73AA9C5A8E835F32E558A2FF /* Pods_WishApp.framework */; };
-		80C3C20A2516C52EB0746B35 /* Pods_ImportExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7771A0FD8577219A9D3980DB /* Pods_ImportExtension.framework */; };
+		A861C2367C0D577F9CCDE45D /* Pods_WishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944DFC002F51B2100E014727 /* Pods_WishApp.framework */; };
+		CD39480EAB25F8141D288B75 /* Pods_ImportExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285663BB454B60CCCB8E22DD /* Pods_ImportExtension.framework */; };
 		DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E4652167640300DBD0A1 /* AppDelegate.swift */; };
 		DE02E46B2167640300DBD0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02E4692167640300DBD0A1 /* Main.storyboard */; };
 		DE02E46D2167640500DBD0A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE02E46C2167640500DBD0A1 /* Assets.xcassets */; };
 		DE02E4702167640500DBD0A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02E46E2167640500DBD0A1 /* LaunchScreen.storyboard */; };
 		DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */; };
 		DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E47C2167672A00DBD0A1 /* StringExtension.swift */; };
+		DE0843B9218DCE5A007187C6 /* PodLicensingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0843B8218DCE5A007187C6 /* PodLicensingViewController.swift */; };
+		DE0843BB218DCE68007187C6 /* PodLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0843BA218DCE68007187C6 /* PodLicense.swift */; };
+		DE0843BD218DCEEB007187C6 /* PodAck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0843BC218DCEEB007187C6 /* PodAck.swift */; };
+		DE0F0AC2218DD79B00F1F067 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0843AE218C85DC007187C6 /* Realm.framework */; };
+		DE0F0AC3218DD79B00F1F067 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE0843AE218C85DC007187C6 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE0F0AC4218DD79B00F1F067 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0843AF218C85DD007187C6 /* RealmSwift.framework */; };
+		DE0F0AC5218DD79C00F1F067 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE0843AF218C85DD007187C6 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE1D80EA2185BCED003C49DE /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80E92185BCED003C49DE /* SortOption.swift */; };
 		DE1D80ED2185BEAB003C49DE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */; };
 		DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EE2185C048003C49DE /* SelectListViewController.swift */; };
 		DE1D80F32185C593003C49DE /* SelectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */; };
 		DE1D80F52185C77C003C49DE /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80F42185C77C003C49DE /* NotificationNames.swift */; };
+		DE28F379218DD93B00763104 /* Realm.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE28F378218DD93B00763104 /* Realm.plist */; };
 		DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE523A5121709EB900436459 /* InfoTableViewController.swift */; };
 		DE57A44421779BFF008EDBAA /* CreditsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */; };
 		DE57A4462177AB18008EDBAA /* InfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */; };
@@ -81,6 +89,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DE0F0AC6218DD79C00F1F067 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DE0F0AC5218DD79C00F1F067 /* RealmSwift.framework in Embed Frameworks */,
+				DE0F0AC3218DD79B00F1F067 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEB7393B21676CA50056E178 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,12 +115,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		071A5A20AAE6B9F6C1FC1D60 /* Pods-WishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.release.xcconfig"; sourceTree = "<group>"; };
-		38A62FEA0C1DC8242788E33A /* Pods-ImportExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		73AA9C5A8E835F32E558A2FF /* Pods_WishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7771A0FD8577219A9D3980DB /* Pods_ImportExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImportExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A028A42FDAA4E24B1F3804C8 /* Pods-ImportExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.release.xcconfig"; sourceTree = "<group>"; };
-		BE0C12CAE0E0EC74F57DE3DD /* Pods-WishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1D783165A331F8265E7E73D8 /* Pods-ImportExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		22B94F8129FF16BDC31D28A1 /* Pods-WishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.debug.xcconfig"; sourceTree = "<group>"; };
+		285663BB454B60CCCB8E22DD /* Pods_ImportExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImportExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38A30F051CD7F610B8404191 /* Pods-WishApp-ImportExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-ImportExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-ImportExtension/Pods-WishApp-ImportExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		58449BDCAFEC416A8E3CBFA6 /* Pods-WishApp-ImportExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-ImportExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-ImportExtension/Pods-WishApp-ImportExtension.release.xcconfig"; sourceTree = "<group>"; };
+		67055DB79C6E688DECAEE47E /* Pods-WishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.release.xcconfig"; sourceTree = "<group>"; };
+		90780D296AB012ADDF52E0CC /* Pods-ImportExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.release.xcconfig"; sourceTree = "<group>"; };
+		944DFC002F51B2100E014727 /* Pods_WishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02E4622167640300DBD0A1 /* WishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02E4652167640300DBD0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE02E46A2167640300DBD0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,11 +131,17 @@
 		DE02E4712167640500DBD0A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE02E477216765CD00DBD0A1 /* WishListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListTableViewController.swift; sourceTree = "<group>"; };
 		DE02E47C2167672A00DBD0A1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		DE0843AE218C85DC007187C6 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		DE0843AF218C85DD007187C6 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		DE0843B8218DCE5A007187C6 /* PodLicensingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodLicensingViewController.swift; sourceTree = "<group>"; };
+		DE0843BA218DCE68007187C6 /* PodLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodLicense.swift; sourceTree = "<group>"; };
+		DE0843BC218DCEEB007187C6 /* PodAck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodAck.swift; sourceTree = "<group>"; };
 		DE1D80E92185BCED003C49DE /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		DE1D80EE2185C048003C49DE /* SelectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListViewController.swift; sourceTree = "<group>"; };
 		DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListTableViewCell.swift; sourceTree = "<group>"; };
 		DE1D80F42185C77C003C49DE /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		DE28F378218DD93B00763104 /* Realm.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Realm.plist; sourceTree = "<group>"; };
 		DE523A5121709EB900436459 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsTableViewCell.swift; sourceTree = "<group>"; };
 		DE57A4452177AB18008EDBAA /* InfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHeaderView.swift; sourceTree = "<group>"; };
@@ -166,7 +194,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D35D95851EBBFBE3B088673 /* Pods_WishApp.framework in Frameworks */,
+				DE0F0AC2218DD79B00F1F067 /* Realm.framework in Frameworks */,
+				A861C2367C0D577F9CCDE45D /* Pods_WishApp.framework in Frameworks */,
+				DE0F0AC4218DD79B00F1F067 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,43 +211,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C3C20A2516C52EB0746B35 /* Pods_ImportExtension.framework in Frameworks */,
+				CD39480EAB25F8141D288B75 /* Pods_ImportExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B8E9829987F65A6FC81110 /* Frameworks */ = {
+		678EAE94E3D77F9430BD0C8B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73AA9C5A8E835F32E558A2FF /* Pods_WishApp.framework */,
-				7771A0FD8577219A9D3980DB /* Pods_ImportExtension.framework */,
+				944DFC002F51B2100E014727 /* Pods_WishApp.framework */,
+				285663BB454B60CCCB8E22DD /* Pods_ImportExtension.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		61BEA555D238441BBE69A1B1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BE0C12CAE0E0EC74F57DE3DD /* Pods-WishApp.debug.xcconfig */,
-				071A5A20AAE6B9F6C1FC1D60 /* Pods-WishApp.release.xcconfig */,
-				38A62FEA0C1DC8242788E33A /* Pods-ImportExtension.debug.xcconfig */,
-				A028A42FDAA4E24B1F3804C8 /* Pods-ImportExtension.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DE02E4592167640300DBD0A1 = {
 			isa = PBXGroup;
 			children = (
+				DE0843B6218DCE03007187C6 /* Realm */,
 				DEB73987216AC0180056E178 /* WishApp-Swift.h */,
 				DE02E4642167640300DBD0A1 /* WishApp */,
 				DEB7392E21676CA50056E178 /* ImportExtension */,
 				DE7421BD2187782B003D379B /* WishAppUITests */,
 				DE02E4632167640300DBD0A1 /* Products */,
-				61BEA555D238441BBE69A1B1 /* Pods */,
-				13B8E9829987F65A6FC81110 /* Frameworks */,
+				E3B77CFB506B2BD1F45C3214 /* Pods */,
+				678EAE94E3D77F9430BD0C8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -241,6 +261,7 @@
 				DE02E47B2167671A00DBD0A1 /* Extensions */,
 				DEB73971216A0EBE0056E178 /* Manager */,
 				DE02E47A2167668C00DBD0A1 /* Objects */,
+				DE0843B7218DCE25007187C6 /* PodLicensing */,
 				DE57A4622178A49F008EDBAA /* Protocols */,
 				DEB7397B216A228A0056E178 /* Structs */,
 				DEA1EDE1218745430045B209 /* Testing */,
@@ -251,6 +272,7 @@
 				DE02E46E2167640500DBD0A1 /* LaunchScreen.storyboard */,
 				DE02E4712167640500DBD0A1 /* Info.plist */,
 				DEAF97CD217A694D0018BFDF /* Acknowledgements.plist */,
+				DE28F378218DD93B00763104 /* Realm.plist */,
 				DEB73999216BCB920056E178 /* Localizable.strings */,
 			);
 			path = WishApp;
@@ -284,6 +306,25 @@
 				DE02E47C2167672A00DBD0A1 /* StringExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE0843B6218DCE03007187C6 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				DE0843AE218C85DC007187C6 /* Realm.framework */,
+				DE0843AF218C85DD007187C6 /* RealmSwift.framework */,
+			);
+			name = Realm;
+			sourceTree = "<group>";
+		};
+		DE0843B7218DCE25007187C6 /* PodLicensing */ = {
+			isa = PBXGroup;
+			children = (
+				DE0843BC218DCEEB007187C6 /* PodAck.swift */,
+				DE0843BA218DCE68007187C6 /* PodLicense.swift */,
+				DE0843B8218DCE5A007187C6 /* PodLicensingViewController.swift */,
+			);
+			path = PodLicensing;
 			sourceTree = "<group>";
 		};
 		DE1D80E82185BCD3003C49DE /* Enums */ = {
@@ -418,6 +459,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E3B77CFB506B2BD1F45C3214 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D783165A331F8265E7E73D8 /* Pods-ImportExtension.debug.xcconfig */,
+				90780D296AB012ADDF52E0CC /* Pods-ImportExtension.release.xcconfig */,
+				22B94F8129FF16BDC31D28A1 /* Pods-WishApp.debug.xcconfig */,
+				67055DB79C6E688DECAEE47E /* Pods-WishApp.release.xcconfig */,
+				38A30F051CD7F610B8404191 /* Pods-WishApp-ImportExtension.debug.xcconfig */,
+				58449BDCAFEC416A8E3CBFA6 /* Pods-WishApp-ImportExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,14 +479,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE02E4742167640500DBD0A1 /* Build configuration list for PBXNativeTarget "WishApp" */;
 			buildPhases = (
-				1C1C5A244672781BF679A870 /* [CP] Check Pods Manifest.lock */,
+				859DEBF43FD171D437EA1257 /* [CP] Check Pods Manifest.lock */,
 				DE7421D52187B1B7003D379B /* Increase Version Number */,
 				DE02E45E2167640300DBD0A1 /* Sources */,
 				DE02E45F2167640300DBD0A1 /* Frameworks */,
 				DEA1EE05218746740045B209 /* Copy Testing Data if needed */,
 				DE02E4602167640300DBD0A1 /* Resources */,
 				DEB7393B21676CA50056E178 /* Embed App Extensions */,
-				6E0361AC2029BFA3144C274A /* [CP] Embed Pods Frameworks */,
+				9DFFF2D97F88D1909D6EC2E3 /* [CP] Embed Pods Frameworks */,
+				DE0F0AC6218DD79C00F1F067 /* Embed Frameworks */,
+				DE0843B5218C8619007187C6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -466,7 +522,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEB7393821676CA50056E178 /* Build configuration list for PBXNativeTarget "ImportExtension" */;
 			buildPhases = (
-				2B3D90677E082122A313C37B /* [CP] Check Pods Manifest.lock */,
+				D7B1FEE8172B7E21BBAA3EFE /* [CP] Check Pods Manifest.lock */,
 				DEB7392921676CA50056E178 /* Sources */,
 				DEB7392A21676CA50056E178 /* Frameworks */,
 				DEB7392B21676CA50056E178 /* Resources */,
@@ -539,6 +595,7 @@
 			files = (
 				DEAF97CE217A694E0018BFDF /* Acknowledgements.plist in Resources */,
 				DE02E4702167640500DBD0A1 /* LaunchScreen.storyboard in Resources */,
+				DE28F379218DD93B00763104 /* Realm.plist in Resources */,
 				DEB73996216BCB920056E178 /* Localizable.strings in Resources */,
 				DE02E46D2167640500DBD0A1 /* Assets.xcassets in Resources */,
 				DE02E46B2167640300DBD0A1 /* Main.storyboard in Resources */,
@@ -565,7 +622,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C1C5A244672781BF679A870 /* [CP] Check Pods Manifest.lock */ = {
+		859DEBF43FD171D437EA1257 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -587,7 +644,33 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2B3D90677E082122A313C37B /* [CP] Check Pods Manifest.lock */ = {
+		9DFFF2D97F88D1909D6EC2E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7B1FEE8172B7E21BBAA3EFE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -609,7 +692,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E0361AC2029BFA3144C274A /* [CP] Embed Pods Frameworks */ = {
+		DE0843B5218C8619007187C6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -617,29 +700,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SUBLicenseViewController/SUBLicenseViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SUBLicenseViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
 		};
 		DE7421D52187B1B7003D379B /* Increase Version Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -688,11 +756,13 @@
 				DEB7397A216A20A20056E178 /* ImportManager.swift in Sources */,
 				DEB73973216A0ECB0056E178 /* DatabaseManager.swift in Sources */,
 				DE1D80F32185C593003C49DE /* SelectListTableViewCell.swift in Sources */,
+				DE0843B9218DCE5A007187C6 /* PodLicensingViewController.swift in Sources */,
 				DE57A45721789615008EDBAA /* App.swift in Sources */,
 				DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */,
 				DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */,
 				DE57A4462177AB18008EDBAA /* InfoHeaderView.swift in Sources */,
 				DEB73984216A2A890056E178 /* ImageManager.swift in Sources */,
+				DE0843BB218DCE68007187C6 /* PodLicense.swift in Sources */,
 				DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */,
 				DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */,
 				DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */,
@@ -707,6 +777,7 @@
 				DEB73976216A14850056E178 /* WishListItem.swift in Sources */,
 				DEB7398C216AC9E30056E178 /* WishListItemTableViewCell.swift in Sources */,
 				DEB7398E216B61670056E178 /* UIColorExtension.swift in Sources */,
+				DE0843BD218DCEEB007187C6 /* PodAck.swift in Sources */,
 				DEB7397D216A229C0056E178 /* URLApp.swift in Sources */,
 				DE523A5221709EB900436459 /* InfoTableViewController.swift in Sources */,
 				DE02E47D2167672A00DBD0A1 /* StringExtension.swift in Sources */,
@@ -907,13 +978,17 @@
 		};
 		DE02E4752167640500DBD0A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE0C12CAE0E0EC74F57DE3DD /* Pods-WishApp.debug.xcconfig */;
+			baseConfigurationReference = 22B94F8129FF16BDC31D28A1 /* Pods-WishApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WishApp/WishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PE75LA624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -937,13 +1012,17 @@
 		};
 		DE02E4762167640500DBD0A1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 071A5A20AAE6B9F6C1FC1D60 /* Pods-WishApp.release.xcconfig */;
+			baseConfigurationReference = 67055DB79C6E688DECAEE47E /* Pods-WishApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = WishApp/WishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PE75LA624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -1007,12 +1086,16 @@
 		};
 		DEB7393921676CA50056E178 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38A62FEA0C1DC8242788E33A /* Pods-ImportExtension.debug.xcconfig */;
+			baseConfigurationReference = 1D783165A331F8265E7E73D8 /* Pods-ImportExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PE75LA624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ImportExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1032,12 +1115,16 @@
 		};
 		DEB7393A21676CA50056E178 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A028A42FDAA4E24B1F3804C8 /* Pods-ImportExtension.release.xcconfig */;
+			baseConfigurationReference = 90780D296AB012ADDF52E0CC /* Pods-ImportExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PE75LA624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ImportExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
