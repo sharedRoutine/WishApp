@@ -21,9 +21,9 @@ extension UIColor {
         self.init(red:(hex >> 16) & 0xff, green:(hex >> 8) & 0xff, blue: hex & 0xff)
     }
     
-    static let nephritis: UIColor = UIColor(withHex: 0x27ae60)
-    static let alizarin: UIColor = UIColor(withHex: 0xe74c3c)
+    static let greenWish: UIColor = UIColor(withHex: 0x70d182)
+    static let redWish: UIColor = UIColor(withHex: 0xec706e)
+    static let blueWish: UIColor = UIColor(withHex: 0x55a3f8)
     static let darkJungleGreen: UIColor = UIColor(withHex: 0x1C1C1C)
     static let dark: UIColor = UIColor(withHex: 0x232323)
-    static let peterRiver: UIColor = UIColor(withHex: 0x3498db)
 }
