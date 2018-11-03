@@ -6,6 +6,7 @@
 //  Copyright © 2018 Janosch Hübner. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 
 class WishListItem: Object {
@@ -23,6 +24,8 @@ class WishListItem: Object {
     
     required convenience init(with app: WishListable) {
         self.init()
+        
+        self.bundleIdentifier = app.bundleIdentifier // primary key cannot be changed afterwards
         self.update(with: app)
     }
     
@@ -32,7 +35,6 @@ class WishListItem: Object {
         self.name = app.name
         self.developer = app.developer
         self.storeIdentifier = app.storeIdentifier
-        self.bundleIdentifier = app.bundleIdentifier
     }
     
     override static func primaryKey() -> String? {
