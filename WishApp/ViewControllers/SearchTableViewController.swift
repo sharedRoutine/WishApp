@@ -31,6 +31,7 @@ class SearchTableViewController: UITableViewController {
         
         self.edgesForExtendedLayout = .top
         
+        self.tableView.accessibilityIdentifier = "search_table"
         self.tableView.register(WishListItemTableViewCell.self, forCellReuseIdentifier: "AppCell")
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = UIColor.darkJungleGreen
@@ -59,6 +60,12 @@ class SearchTableViewController: UITableViewController {
         
         self.tableView.tableHeaderView = self.searchController.searchBar
         self.definesPresentationContext = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - Table view data source
