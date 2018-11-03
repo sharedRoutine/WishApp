@@ -64,10 +64,10 @@ class WishListItemTableViewCell: UITableViewCell {
         self.priceLabel.font = UIFont.systemFont(ofSize: 16.0)
         self.priceLabel.adjustsFontSizeToFitWidth = true
         self.priceLabel.textAlignment = .center
-        self.priceLabel.layer.borderColor = UIColor.white.cgColor
-        self.priceLabel.layer.borderWidth = 1.5
-        self.priceLabel.textColor = UIColor.white
-        self.priceLabel.backgroundColor = UIColor.clear
+        self.priceLabel.layer.cornerRadius = 10.0
+        self.priceLabel.layer.masksToBounds = true
+        self.priceLabel.textColor = UIColor.dark
+        self.priceLabel.backgroundColor = UIColor.white
         
         let selectedView = UIView(frame: .zero)
         selectedView.backgroundColor = UIColor.darkGray
