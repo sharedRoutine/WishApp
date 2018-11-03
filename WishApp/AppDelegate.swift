@@ -8,10 +8,6 @@
 
 import UIKit
 
-#if DEBUG
-import FLEX
-#endif
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().barStyle = .black
         UINavigationBar.appearance().tintColor = UIColor.white
-        
-        #if DEBUG
-            //FLEXManager.shared().showExplorer()
-        #endif
         
         self.wishListTableViewController = WishListTableViewController(style: .grouped)
         
