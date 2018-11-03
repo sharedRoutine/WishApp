@@ -6,11 +6,11 @@
   Copyright © 2018 Janosch Hübner. All rights reserved.
 */
 
-"WISH_LIST" = "Wish List";
+"WISH_LIST" = "Wishlist";
 "WISH_ITEMS" = "Active Wishes";
 "FULFILLED_ITEMS" = "Fulfilled Wishes";
 "FREE" = "Free";
-"WISH_APP_INFO" = "Wish App Info";
+"WISH_APP_INFO" = "WishApp Info";
 "DEVELOPER" = "Developer";
 "BUY_ME_A_COFFEE" = "☕️ Buy me a coffee";
 "LICENSES" = "📄 Licenses";
@@ -32,3 +32,5 @@
 "BY_DATE" = "By Date";
 "BY_PRICE" = "By Price";
 "SELECT_SORT_OPTION" = "Select Sort Option";
+"UPDATING_APP" = "Updating App Information";
+"ACKNOWLEDGEMENTS" = "Acknowledgements";
