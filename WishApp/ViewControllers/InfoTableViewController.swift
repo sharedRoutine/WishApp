@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SUBLicenseViewController
 
 class InfoTableViewController: UITableViewController {
     
@@ -47,7 +46,7 @@ class InfoTableViewController: UITableViewController {
         
         self.darkModeSwitch.addTarget(self, action: #selector(handleDarkMode(changed:)), for: .valueChanged)
         self.darkModeSwitch.isOn = SettingsManager.shared.darkModeEnabled
-        self.darkModeSwitch.onTintColor = UIColor.peterRiver
+        self.darkModeSwitch.onTintColor = UIColor.blueWish
         
         self.title = "WISH_APP_INFO".localized
         
@@ -246,7 +245,7 @@ class InfoTableViewController: UITableViewController {
             selectSortOptionViewController.title = "SELECT_SORT_OPTION".localized
             self.navigationController?.pushViewController(selectSortOptionViewController, animated: true)
         case .licenses:
-            let licensesViewController: SUBLicenseViewController = SUBLicenseViewController()
+            let licensesViewController: PodLicensingViewController = PodLicensingViewController(style: .grouped)
             self.navigationController?.pushViewController(licensesViewController, animated: true)
         default:
             break
