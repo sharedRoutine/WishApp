@@ -2,3 +2,4 @@
 /fastlane/screenshots
 /fastlane/DerivedData
 /Gemfile.lock
+/fastlane/report.xml
