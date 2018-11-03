@@ -39,9 +39,10 @@ class SearchTableViewController: UITableViewController {
         self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.dimsBackgroundDuringPresentation = false
         self.searchController.obscuresBackgroundDuringPresentation = false
-        self.searchController.searchResultsUpdater = self
         self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchResultsUpdater = self
         
+        self.searchController.searchBar.searchBarStyle = .prominent
         self.searchController.searchBar.delegate = self
         self.searchController.searchBar.scopeButtonTitles = []
         self.searchController.searchBar.barTintColor = UIColor.dark
@@ -65,7 +66,7 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: - Table view data source
