@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import RealmSwift
+import MBProgressHUD
 
 class WishListTableViewController: UITableViewController {
 
@@ -158,6 +159,8 @@ class WishListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.accessibilityIdentifier = "wish_list_nav_bar"
+        
         self.priceFormatter.allowsFloats = true
         self.priceFormatter.locale = Locale.current
         self.priceFormatter.numberStyle = .currency
@@ -190,13 +193,17 @@ class WishListTableViewController: UITableViewController {
         self.tableView.separatorStyle = .none
         self.view.backgroundColor = UIColor.darkJungleGreen
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(handleInfoButton(pressed:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchButton(pressed:)))
+        self.navigationItem.rightBarButtonItem?.accessibilityIdentifier = "search_button"
     }
     
     @objc private func handleInfoButton(pressed: UIBarButtonItem) -> Void {
         let infoViewController = InfoTableViewController(style: .grouped)
         let navigationController = UINavigationController(rootViewController: infoViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
         self.present(navigationController, animated: true, completion: nil)
     }
     
@@ -291,7 +298,7 @@ class WishListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return !TestingManager.shared.isTesting
+        return true //!TestingManager.shared.isTesting
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -303,9 +310,11 @@ class WishListTableViewController: UITableViewController {
         if tableViewSection == .fulfilledItems {
             return nil
         }
+        
+        let item: WishListItem = self.itemData.items[indexPath.row]
+        
         let markAction = UIContextualAction(style: .normal, title:  nil, handler: { (action: UIContextualAction, view: UIView, success:(Bool) -> Void) in
             success(true)
-            let item: WishListItem = self.itemData.items[indexPath.row]
             DatabaseManager.shared.write {
                 item.fulfilled = true
                 item.dateCompleted = Date()
@@ -313,8 +322,34 @@ class WishListTableViewController: UITableViewController {
             self.buildUI()
         })
         markAction.image = UIImage(named: "MarkRow")
-        markAction.backgroundColor = UIColor.nephritis
-        return UISwipeActionsConfiguration(actions: [markAction])
+        markAction.backgroundColor = UIColor.greenWish
+        
+        let updateAction = UIContextualAction(style: .normal, title:  nil, handler: { (action: UIContextualAction, view: UIView, success:(Bool) -> Void) in
+            success(true)
+            let hud: MBProgressHUD = MBProgressHUD.showAdded(to: tableView, animated: true)
+            hud.mode = MBProgressHUDMode.indeterminate
+            hud.label.text = "UPDATING_APP".localized
+            hud.label.textColor = UIColor.white
+            hud.contentColor = UIColor.white
+            hud.bezelView.color = UIColor.dark
+            hud.bezelView.style = MBProgressHUDBackgroundStyle.solidColor
+            iTunesSearchAPI.shared.lookupApp(for: item.bundleIdentifier, completion: { (app: App?) in
+                DispatchQueue.main.async {
+                   hud.hide(animated: true, afterDelay: 0.5)
+                }
+                if let app = app {
+                    DatabaseManager.shared.write {
+                        item.update(with: app)
+                    }
+                    DispatchQueue.main.async {
+                        tableView.reloadRows(at: [indexPath], with: .fade)
+                    }
+                }
+            })
+        })
+        updateAction.image = UIImage(named: "UpdateRow")
+        updateAction.backgroundColor = UIColor.blueWish
+        return UISwipeActionsConfiguration(actions: [markAction,updateAction])
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -328,7 +363,7 @@ class WishListTableViewController: UITableViewController {
             self.buildUI()
         })
         deleteAction.image = UIImage(named: "DeleteRow")
-        deleteAction.backgroundColor = UIColor.alizarin
+        deleteAction.backgroundColor = UIColor.redWish
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
