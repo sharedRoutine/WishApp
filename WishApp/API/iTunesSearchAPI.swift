@@ -15,15 +15,8 @@ class iTunesSearchAPI: NSObject {
     
     private var searchTask: URLSessionDataTask? = nil
     
-    private let baseURL: URL = URL(string: "https://itunes.apple.com/search")!
-    
-    public var apiURL: URL {
-        get {
-            return self.baseURL
-        }
-    }
-    
-    // https://itunes.apple.com/search?media=software&term=Doodle%20Jump&limit=10&country=DE&lang=de_DE
+    private let baseSearchURL: URL = URL(string: "https://itunes.apple.com/search")!
+    private let baseLookupURL: URL = URL(string: "https://itunes.apple.com/lookup")!
     
     private func generateAppSearchURL(for term: String, limit: Int = 10) -> URL {
         var queryItems: [URLQueryItem] = [URLQueryItem(name: "media", value: "software")]
@@ -32,7 +25,17 @@ class iTunesSearchAPI: NSObject {
         if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
             queryItems.append(URLQueryItem(name: "country", value: countryCode))
         }
-        var components: URLComponents = URLComponents(url: self.apiURL, resolvingAgainstBaseURL: false)!
+        var components: URLComponents = URLComponents(url: self.baseSearchURL, resolvingAgainstBaseURL: false)!
+        components.queryItems = queryItems
+        return components.url!
+    }
+    
+    private func generateLookupURL(for bundleId: String) -> URL {
+        var queryItems: [URLQueryItem] = [URLQueryItem(name: "bundleId", value: bundleId)]
+        if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
+            queryItems.append(URLQueryItem(name: "country", value: countryCode.lowercased()))
+        }
+        var components: URLComponents = URLComponents(url: self.baseLookupURL, resolvingAgainstBaseURL: false)!
         components.queryItems = queryItems
         return components.url!
     }
@@ -54,6 +57,39 @@ class iTunesSearchAPI: NSObject {
                     let jsonData: AppSearchResult = try JSONDecoder().decode(AppSearchResult.self, from: data)
                     DispatchQueue.main.async {
                         completion(jsonData)
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                    print("Error decoding json: \(error)")
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    public func lookupApp(for bundleId: String, completion: @escaping ((_ app: App?)->())) {
+        let url: URL = self.generateLookupURL(for: bundleId)
+        var request: URLRequest = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Swift.Error?) in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
+            if let data = data {
+                do {
+                    let jsonData: AppSearchResult = try JSONDecoder().decode(AppSearchResult.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(jsonData.apps.first)
                     }
                 } catch {
                     DispatchQueue.main.async {
