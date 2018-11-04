@@ -18,15 +18,18 @@ class iTunesSearchAPI: NSObject {
     private let baseSearchURL: URL = URL(string: "https://itunes.apple.com/search")!
     private let baseLookupURL: URL = URL(string: "https://itunes.apple.com/lookup")!
     
-    private func generateAppSearchURL(for term: String, limit: Int = 10) -> URL {
+    private func generateAppSearchURL(for term: String, limit: Int = 50) -> URL {
         var queryItems: [URLQueryItem] = [URLQueryItem(name: "media", value: "software")]
         queryItems.append(URLQueryItem(name: "term", value: term))
         queryItems.append(URLQueryItem(name: "limit", value: String(limit))) 
         if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
             queryItems.append(URLQueryItem(name: "country", value: countryCode))
+        } else {
+            queryItems.append(URLQueryItem(name: "country", value: "US"))
         }
         var components: URLComponents = URLComponents(url: self.baseSearchURL, resolvingAgainstBaseURL: false)!
         components.queryItems = queryItems
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "%20", with: "+")
         return components.url!
     }
     
@@ -40,7 +43,7 @@ class iTunesSearchAPI: NSObject {
         return components.url!
     }
     
-    public func loadApps(for text: String, limit: Int = 10, completion: @escaping ((_ result: AppSearchResult?)->())) {
+    public func loadApps(for text: String, limit: Int = 50, completion: @escaping ((_ result: AppSearchResult?)->())) {
         let url: URL = self.generateAppSearchURL(for: text, limit: limit)
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
