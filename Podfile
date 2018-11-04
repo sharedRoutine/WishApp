@@ -9,10 +9,6 @@ target 'WishApp' do
   pod 'SwiftyUserDefaults', '4.0.0-alpha.1'
   pod 'MBProgressHUD', '~> 1.1.0'
 
-  target 'ImportExtension' do
-	inherit! :search_paths
-  end
-
   target 'WishAppUITests' do
     pod 'SimulatorStatusMagic', :configurations => ['Debug']
   end
