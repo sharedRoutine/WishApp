@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 class DatabaseManager : NSObject {
     
@@ -25,11 +26,13 @@ class DatabaseManager : NSObject {
         self.realm = try! Realm(configuration: config)
         
         #if WISH_APP
-        self.observationToken = self.realm.observe { (notification: Realm.Notification, r: Realm) in
-            if notification == .didChange {
-                let appState = UIApplication.shared.applicationState
-                if appState == .background || appState == .inactive {
-                    NotificationCenter.default.post(name: NSNotification.Name.needsWishListRefresh, object: nil)
+        if !TestingManager.shared.isTesting {
+            self.observationToken = self.realm.observe { (notification: Realm.Notification, r: Realm) in
+                if notification == .didChange {
+                    let appState = UIApplication.shared.applicationState
+                    if appState == .background || appState == .inactive {
+                        NotificationCenter.default.post(name: NSNotification.Name.needsWishListRefresh, object: nil)
+                    }
                 }
             }
         }
