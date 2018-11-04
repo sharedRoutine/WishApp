@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A4569E61C46AD6F4B952FC61 /* Pods_WishApp_WishAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE2CC121FC820D088554A4D /* Pods_WishApp_WishAppUITests.framework */; };
 		A861C2367C0D577F9CCDE45D /* Pods_WishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944DFC002F51B2100E014727 /* Pods_WishApp.framework */; };
-		A9BB43855C1A24ADF37D727D /* Pods_ImportExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 285663BB454B60CCCB8E22DD /* Pods_ImportExtension.framework */; };
 		DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02E4652167640300DBD0A1 /* AppDelegate.swift */; };
 		DE02E46B2167640300DBD0A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE02E4692167640300DBD0A1 /* Main.storyboard */; };
 		DE02E46D2167640500DBD0A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE02E46C2167640500DBD0A1 /* Assets.xcassets */; };
@@ -117,7 +116,6 @@
 
 /* Begin PBXFileReference section */
 		0295BC2EAC2AFBC14AB90870 /* Pods-WishApp-WishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-WishAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		1D783165A331F8265E7E73D8 /* Pods-ImportExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		22B94F8129FF16BDC31D28A1 /* Pods-WishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		285663BB454B60CCCB8E22DD /* Pods_ImportExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImportExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38A30F051CD7F610B8404191 /* Pods-WishApp-ImportExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-ImportExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-ImportExtension/Pods-WishApp-ImportExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 		58449BDCAFEC416A8E3CBFA6 /* Pods-WishApp-ImportExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-ImportExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-ImportExtension/Pods-WishApp-ImportExtension.release.xcconfig"; sourceTree = "<group>"; };
 		67055DB79C6E688DECAEE47E /* Pods-WishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.release.xcconfig"; sourceTree = "<group>"; };
 		6D3CAA0E4C0CEB0400CFB269 /* Pods-WishApp-WishAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-WishAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		90780D296AB012ADDF52E0CC /* Pods-ImportExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImportExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImportExtension/Pods-ImportExtension.release.xcconfig"; sourceTree = "<group>"; };
 		944DFC002F51B2100E014727 /* Pods_WishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02E4622167640300DBD0A1 /* WishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02E4652167640300DBD0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,7 +213,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9BB43855C1A24ADF37D727D /* Pods_ImportExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,8 +464,6 @@
 		E3B77CFB506B2BD1F45C3214 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1D783165A331F8265E7E73D8 /* Pods-ImportExtension.debug.xcconfig */,
-				90780D296AB012ADDF52E0CC /* Pods-ImportExtension.release.xcconfig */,
 				22B94F8129FF16BDC31D28A1 /* Pods-WishApp.debug.xcconfig */,
 				67055DB79C6E688DECAEE47E /* Pods-WishApp.release.xcconfig */,
 				38A30F051CD7F610B8404191 /* Pods-WishApp-ImportExtension.debug.xcconfig */,
@@ -532,7 +526,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEB7393821676CA50056E178 /* Build configuration list for PBXNativeTarget "ImportExtension" */;
 			buildPhases = (
-				D7B1FEE8172B7E21BBAA3EFE /* [CP] Check Pods Manifest.lock */,
 				DE28F37B218E24B300763104 /* Increase Version Number */,
 				DEB7392921676CA50056E178 /* Sources */,
 				DEB7392A21676CA50056E178 /* Frameworks */,
@@ -729,28 +722,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7B1FEE8172B7E21BBAA3EFE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ImportExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DE0843B5218C8619007187C6 /* ShellScript */ = {
@@ -1085,7 +1056,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				WISH_APP_TESTING = YES;
+				WISH_APP_TESTING = NO;
 			};
 			name = Debug;
 		};
@@ -1119,7 +1090,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				WISH_APP_TESTING = YES;
+				WISH_APP_TESTING = NO;
 			};
 			name = Release;
 		};
@@ -1167,7 +1138,6 @@
 		};
 		DEB7393921676CA50056E178 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D783165A331F8265E7E73D8 /* Pods-ImportExtension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
@@ -1196,7 +1166,6 @@
 		};
 		DEB7393A21676CA50056E178 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90780D296AB012ADDF52E0CC /* Pods-ImportExtension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
