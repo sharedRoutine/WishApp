@@ -48,7 +48,8 @@ class SearchTableViewController: UITableViewController {
         self.searchController.searchBar.barTintColor = UIColor.dark
         self.searchController.searchBar.tintColor = UIColor.white
         
-        self.tableView.contentInset = UIEdgeInsets(top: self.searchController.searchBar.frame.height + 8.0, left: 0, bottom: 0, right: 0)
+        let height = self.searchController.searchBar.frame.height + 10.0
+        self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
         
         if let subview = self.searchController.searchBar.subviews.first {
             if let textField = subview.subviews.filter( { view in
@@ -60,7 +61,7 @@ class SearchTableViewController: UITableViewController {
             }
         }
         
-        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.navigationItem.titleView = self.searchController.searchBar
         self.definesPresentationContext = true
     }
     
@@ -123,7 +124,7 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10.0
+        return 20.0
     }
 }
 
