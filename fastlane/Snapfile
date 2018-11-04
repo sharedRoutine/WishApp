@@ -24,8 +24,9 @@ clear_previous_screenshots(true)
 # Arguments to pass to the app on launch. See https://docs.fastlane.tools/actions/snapshot/#launch-arguments
 launch_arguments(["WISHAPP_TESTING"])
 
-# For more information about all available options run
-# fastlane action snapshot
+#reinstall_app(true)
+#stop_after_first_error(true)
+concurrent_simulators(false)
 
 configuration("Debug")
 
