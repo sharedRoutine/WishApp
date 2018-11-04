@@ -8,6 +8,10 @@
 
 import XCTest
 
+#if DEBUG
+import SimulatorStatusMagic
+#endif
+
 class WishAppUITests: XCTestCase {
 
     private var app: XCUIApplication!
@@ -15,6 +19,10 @@ class WishAppUITests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
+        #if DEBUG
+            SDStatusBarManager.sharedInstance().enableOverrides()
+        #endif
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -38,18 +46,20 @@ class WishAppUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testScreenshots() {
+    func testMainScreenshots() {
         snapshot("Main")
         let tablesQuery = self.app.tables.cells
         tablesQuery.element(boundBy: 3).swipeRight()
         sleep(2)
         snapshot("Check")
         self.app.tap()
-        tablesQuery.element(boundBy: 5).swipeLeft()
+        tablesQuery.element(boundBy: 3).swipeLeft()
         sleep(2)
         snapshot("Delete")
         self.app.tap()
-        sleep(2)
+    }
+
+    func testSearchScreenshots() {
         self.app.navigationBars["wish_list_nav_bar"].buttons["search_button"].tap()
         sleep(2)
         let searchField = self.app.tables["search_table"].searchFields["Search"]
@@ -60,5 +70,4 @@ class WishAppUITests: XCTestCase {
         sleep(2)
         snapshot("Search")
     }
-
 }
