@@ -69,6 +69,12 @@
 		DEB89B08218266BE00139C48 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7398D216B61670056E178 /* UIColorExtension.swift */; };
 		DEB89B0A2182731A00139C48 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB89B092182731A00139C48 /* MainInterface.storyboard */; };
 		DEB89B0C2183170500139C48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB89B0B2183170500139C48 /* Assets.xcassets */; };
+		DEE55DBA218F3F1100F23BFD /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A44E21789021008EDBAA /* iTunesSearchAPI.swift */; };
+		DEE55DBB218F3F1E00F23BFD /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A45621789615008EDBAA /* App.swift */; };
+		DEE55DBC218F3F2300F23BFD /* URLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7397C216A229C0056E178 /* URLApp.swift */; };
+		DEE55DBD218F3F2B00F23BFD /* iTunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DAA51218A30A300C2E2A5 /* iTunesApp.swift */; };
+		DEE55DBE218F3F6D00F23BFD /* AppSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A45121789085008EDBAA /* AppSearchResult.swift */; };
+		DEE55DBF218F410300F23BFD /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -841,8 +847,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE55DBF218F410300F23BFD /* WishListable.swift in Sources */,
 				DE7421BF2187782B003D379B /* WishAppUITests.swift in Sources */,
+				DEE55DBC218F3F2300F23BFD /* URLApp.swift in Sources */,
+				DEE55DBB218F3F1E00F23BFD /* App.swift in Sources */,
+				DEE55DBE218F3F6D00F23BFD /* AppSearchResult.swift in Sources */,
+				DEE55DBD218F3F2B00F23BFD /* iTunesApp.swift in Sources */,
 				DE7421C82187787E003D379B /* SnapshotHelper.swift in Sources */,
+				DEE55DBA218F3F1100F23BFD /* iTunesSearchAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

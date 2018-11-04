@@ -35,13 +35,6 @@ class WishAppUITests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
-    func waitForElementToAppear(_ element: XCUIElement) -> Bool {
-        let predicate = NSPredicate(format: "exists == true")
-        let exp = expectation(for: predicate, evaluatedWith: element, handler: nil)
-        let result = XCTWaiter().wait(for: [exp], timeout: 10)
-        return result == .completed
-    }
-
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
@@ -62,12 +55,14 @@ class WishAppUITests: XCTestCase {
     func testSearchScreenshots() {
         let wishListNavBarNavigationBar = XCUIApplication().navigationBars["wish_list_nav_bar"]
         wishListNavBarNavigationBar.buttons["search_button"].tap()
-        sleep(2)
         wishListNavBarNavigationBar.searchFields["Search"].tap()
         self.app.typeText("Doodle Jump")
         self.app.buttons["Search"].tap()
-        assert(self.waitForElementToAppear(self.app.tables["search_table"].cells.staticTexts["Doodle Jump"]))
-        sleep(2)
+        let excp = expectation(description: "Perform Search")
+        iTunesSearchAPI.shared.loadApps(for: "Doodle Jump", limit: 50) { (_ result: AppSearchResult?) in
+            excp.fulfill()
+        }
+        wait(for: [excp], timeout: 30.0)
         snapshot("Search")
     }
 }
