@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  WishApp
+
+  Created by Janosch Hübner on 08.10.18.
+  Copyright © 2018 Janosch Hübner. All rights reserved.
+*/
+
+"WISH_LIST" = "Wunschliste";
+"WISH_ITEMS" = "Wünsche";
+"FULFILLED_ITEMS" = "Erfüllte Wünsche";
+"FREE" = "Gratis";
+"WISH_APP_INFO" = "WishApp Info";
+"DEVELOPER" = "Entwickler";
+"BUY_ME_A_COFFEE" = "☕️ Gib mir einen aus";
+"LICENSES" = "📄 Lizenzen";
+"NO_APPS_ON_WISHLIST" = "Du hast noch keine Apps auf deiner Wunschliste 😱\n\nBenutze die Suche oder den AppStore um welche hinzuzufügen 😎";
+"CREDITS" = "Credits";
+"SETTINGS" = "Einstellungen";
+"DARK_MODE" = "Nacht Modus";
+"SEARCH_APPS" = "Apps suchen";
+"SORT_ITEMS" = "Sortierung";
+"ITEM_EXISTS" = "App existiert";
+"%@ ALREADY_EXISTS" = "%@ existiert bereits auf deiner Wunschliste";
+"ALREADY_EXISTS" = "Du hast dies bereits auf der Wunschliste";
+"LIKE_THE_APP" = "Gefällt dir die App? 😇";
+"LOADING_APP_INFO" = "Lade App Informationen...";
+"APP_ADDED_TO_WISHLIST" = "Zu deiner Wunschliste hinzugefügt!";
+"NO_VALID_APP_FOUND" = "Keine App gefunden ☹️";
+"NO_URL_FOUND" = "Keine URL gefunden ☹️";
+"BY_NAME" = "Nach Name";
+"BY_DATE" = "Nach Datum";
+"BY_PRICE" = "Nach Preis";
+"SELECT_SORT_OPTION" = "Sortierung auswählen";
+"UPDATING_APP" = "Aktualisiere App...";
+"ACKNOWLEDGEMENTS" = "Danksagungen";
+"SEARCHING" = "Suchen...";
