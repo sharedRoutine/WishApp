@@ -60,10 +60,10 @@ class WishAppUITests: XCTestCase {
     }
 
     func testSearchScreenshots() {
-        self.app.navigationBars["wish_list_nav_bar"].buttons["search_button"].tap()
+        let wishListNavBarNavigationBar = XCUIApplication().navigationBars["wish_list_nav_bar"]
+        wishListNavBarNavigationBar.buttons["search_button"].tap()
         sleep(2)
-        let searchField = self.app.tables["search_table"].searchFields["Search"]
-        searchField.tap()
+        wishListNavBarNavigationBar.searchFields["Search"].tap()
         self.app.typeText("Doodle Jump")
         self.app.buttons["Search"].tap()
         assert(self.waitForElementToAppear(self.app.tables["search_table"].cells.staticTexts["Doodle Jump"]))
