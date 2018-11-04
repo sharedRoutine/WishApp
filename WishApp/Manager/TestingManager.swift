@@ -14,7 +14,7 @@ class TestingManager: NSObject {
     
     public var isTesting: Bool {
         get {
-            return false //ProcessInfo.processInfo.arguments.contains("WISHAPP_TESTING")
+            return false
         }
     }
     
