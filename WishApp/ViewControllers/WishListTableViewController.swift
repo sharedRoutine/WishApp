@@ -233,10 +233,12 @@ class WishListTableViewController: UITableViewController {
             self.noContentLabel!.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor).isActive = true
             self.noContentLabel!.heightAnchor.constraint(greaterThanOrEqualToConstant: 10.0).isActive = true
             
+            tableView.isScrollEnabled = false
             tableView.backgroundView = backgroundView
         } else {
             self.noContentLabel = nil
             tableView.backgroundView = nil
+            tableView.isScrollEnabled = true
         }
         return numberOfSections
     }
@@ -372,19 +374,16 @@ class WishListTableViewController: UITableViewController {
         
         let tableViewSection: Section = self.sectionData[indexPath.section]
         
-        // maybe just open the appstore
-        if tableViewSection == .items {
-            let item: WishListItem = self.itemData.items[indexPath.row]
-            if let appURL: URL = URL(string: item.appStoreURL), UIApplication.shared.canOpenURL(appURL) {
-                UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
-            } else {
-                let productViewController: SKStoreProductViewController = SKStoreProductViewController()
-                productViewController.delegate = self
-                productViewController.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: item.storeIdentifier]) { (success: Bool, error: Error?) in
-                    print("Done loading product")
-                }
-                self.present(productViewController, animated: true, completion: nil)
+        let item: WishListItem = (tableViewSection == .items ? self.itemData.items[indexPath.row] : self.itemData.fulfilledItems[indexPath.row])
+        if let appURL: URL = URL(string: item.appStoreURL), UIApplication.shared.canOpenURL(appURL) {
+            UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            let productViewController: SKStoreProductViewController = SKStoreProductViewController()
+            productViewController.delegate = self
+            productViewController.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier: item.storeIdentifier]) { (success: Bool, error: Error?) in
+                print("Done loading product")
             }
+            self.present(productViewController, animated: true, completion: nil)
         }
     }
 }
