@@ -3,24 +3,28 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SimulatorStatusMagic (2.3.2)
   - SwiftyUserDefaults (4.0.0-alpha.1)
 
 DEPENDENCIES:
   - MBProgressHUD (~> 1.1.0)
   - SDWebImage (~> 4.0)
+  - SimulatorStatusMagic
   - SwiftyUserDefaults (= 4.0.0-alpha.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - MBProgressHUD
     - SDWebImage
+    - SimulatorStatusMagic
     - SwiftyUserDefaults
 
 SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SimulatorStatusMagic: 0c0e711acef6e70dd8a0710962347635a9cdef24
   SwiftyUserDefaults: cebe0ff9472f52699772a514b6f7155861d8069b
 
-PODFILE CHECKSUM: 7f069695fd9384953997422ce5693d11d102e2be
+PODFILE CHECKSUM: 224da45e257e157a8a7f5906db5cb7c3c60bbada
 
 COCOAPODS: 1.5.3

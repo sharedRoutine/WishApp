@@ -12,6 +12,10 @@ target 'WishApp' do
   target 'ImportExtension' do
 	inherit! :search_paths
   end
+
+  target 'WishAppUITests' do
+    pod 'SimulatorStatusMagic', :configurations => ['Debug']
+  end
   
 end
 
