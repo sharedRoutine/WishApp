@@ -29,7 +29,7 @@ class SearchTableViewController: UITableViewController {
         
         self.title = "SEARCH_APPS".localized
         
-        self.edgesForExtendedLayout = .top
+        self.tableView.contentInsetAdjustmentBehavior = .never
         
         self.tableView.accessibilityIdentifier = "search_table"
         self.tableView.register(WishListItemTableViewCell.self, forCellReuseIdentifier: "AppCell")
@@ -47,7 +47,8 @@ class SearchTableViewController: UITableViewController {
         self.searchController.searchBar.scopeButtonTitles = []
         self.searchController.searchBar.barTintColor = UIColor.dark
         self.searchController.searchBar.tintColor = UIColor.white
-        self.searchController.searchBar.sizeToFit()
+        
+        self.tableView.contentInset = UIEdgeInsets(top: self.searchController.searchBar.frame.height + 8.0, left: 0, bottom: 0, right: 0)
         
         if let subview = self.searchController.searchBar.subviews.first {
             if let textField = subview.subviews.filter( { view in
@@ -133,7 +134,7 @@ extension SearchTableViewController : UISearchResultsUpdating {
             self.tableView.reloadData()
             return
         }
-        iTunesSearchAPI.shared.loadApps(for: searchString, limit: 10) { (_ result: AppSearchResult?) in
+        iTunesSearchAPI.shared.loadApps(for: searchString, limit: 50) { (_ result: AppSearchResult?) in
             self.searchResult = result
             DispatchQueue.main.async {
                 self.tableView.reloadData()
