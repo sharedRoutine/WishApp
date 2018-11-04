@@ -55,9 +55,8 @@ class WishAppUITests: XCTestCase {
     func testSearchScreenshots() {
         let wishListNavBarNavigationBar = XCUIApplication().navigationBars["wish_list_nav_bar"]
         wishListNavBarNavigationBar.buttons["search_button"].tap()
-        wishListNavBarNavigationBar.searchFields["Search"].tap()
-        self.app.typeText("Doodle Jump")
-        self.app.buttons["Search"].tap()
+        wishListNavBarNavigationBar.searchFields["search_textfield"].tap()
+        self.app.typeText("Doodle Jump\n")
         let excp = expectation(description: "Perform Search")
         iTunesSearchAPI.shared.loadApps(for: "Doodle Jump", limit: 50) { (_ result: AppSearchResult?) in
             excp.fulfill()
