@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import MBProgressHUD
 
 class SearchTableViewController: UITableViewController {
     
@@ -48,6 +49,9 @@ class SearchTableViewController: UITableViewController {
         self.searchController.searchBar.barTintColor = UIColor.dark
         self.searchController.searchBar.tintColor = UIColor.white
         
+        self.searchController.searchBar.accessibilityIdentifier = "search_bar"
+        self.searchController.searchBar.isAccessibilityElement = false
+        
         if let subview = self.searchController.searchBar.subviews.first {
             if let textField = subview.subviews.filter( { view in
                 return view is UITextField
@@ -55,6 +59,8 @@ class SearchTableViewController: UITableViewController {
                 textField.tintColor = UIColor.white
                 textField.backgroundColor = UIColor.dark
                 textField.textColor = UIColor.white
+                textField.accessibilityIdentifier = "search_textfield"
+                textField.isAccessibilityElement = true
             }
         }
         
@@ -95,11 +101,13 @@ class SearchTableViewController: UITableViewController {
         let cell: WishListItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: "AppCell", for: indexPath) as! WishListItemTableViewCell
         
         let apps: [App] = self.searchResult!.paidApps
-        let app: App = apps[indexPath.row]
-        cell.itemNameLabel.text = app.name
-        cell.itemDevelopedByLabel.text = app.developer
-        cell.priceString = (app.isFree ? "FREE".localized : self.priceFormatter.string(from: NSNumber(value: app.price)))
-        cell.iconImageView.sd_setImage(with: URL(string: app.iconFile), placeholderImage: nil, options: .highPriority, completed: nil)
+        if indexPath.row < apps.count {
+            let app: App = apps[indexPath.row]
+            cell.itemNameLabel.text = app.name
+            cell.itemDevelopedByLabel.text = app.developer
+            cell.priceString = (app.isFree ? "FREE".localized : self.priceFormatter.string(from: NSNumber(value: app.price)))
+            cell.iconImageView.sd_setImage(with: URL(string: app.iconFile), placeholderImage: nil, options: .highPriority, completed: nil)
+        }
         cell.shouldShowSeparator = indexPath.row != apps.count-1
         cell.separatorColor = UIColor.dark
         return cell
@@ -132,23 +140,31 @@ class SearchTableViewController: UITableViewController {
 
 extension SearchTableViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchString: String = searchController.searchBar.text, searchString.count > 0 else {
-            self.searchResult = nil
-            self.tableView.reloadData()
-            return
-        }
-        iTunesSearchAPI.shared.loadApps(for: searchString, limit: 50) { (_ result: AppSearchResult?) in
-            self.searchResult = result
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        
     }
 }
 
 extension SearchTableViewController : UISearchBarDelegate {
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        guard let searchString: String = searchController.searchBar.text, searchString.count > 0 else {
+            self.searchResult = nil
+            self.tableView.reloadData()
+            return
+        }
+        let hud: MBProgressHUD = MBProgressHUD.showAdded(to: tableView, animated: true)
+        hud.mode = MBProgressHUDMode.indeterminate
+        hud.label.text = "SEARCHING".localized
+        hud.label.textColor = UIColor.white
+        hud.contentColor = UIColor.white
+        hud.bezelView.color = UIColor.dark
+        hud.bezelView.style = MBProgressHUDBackgroundStyle.solidColor
+        iTunesSearchAPI.shared.loadApps(for: searchString, limit: 50) { (_ result: AppSearchResult?) in
+            self.searchResult = result
+            DispatchQueue.main.async {
+                hud.hide(animated: true, afterDelay: 0.5)
+                self.tableView.reloadSections([0], with: .fade)
+            }
+        }
     }
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
