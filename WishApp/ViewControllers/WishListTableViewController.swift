@@ -153,6 +153,8 @@ class WishListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
         self.buildUI()
     }
     
@@ -192,8 +194,6 @@ class WishListTableViewController: UITableViewController {
         self.tableView.backgroundColor = UIColor.darkJungleGreen
         self.tableView.separatorStyle = .none
         self.view.backgroundColor = UIColor.darkJungleGreen
-        
-        self.navigationController?.navigationBar.prefersLargeTitles = true
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(handleInfoButton(pressed:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearchButton(pressed:)))

@@ -48,9 +48,6 @@ class SearchTableViewController: UITableViewController {
         self.searchController.searchBar.barTintColor = UIColor.dark
         self.searchController.searchBar.tintColor = UIColor.white
         
-        let height = self.searchController.searchBar.frame.height + 10.0
-        self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
-        
         if let subview = self.searchController.searchBar.subviews.first {
             if let textField = subview.subviews.filter( { view in
                 return view is UITextField
@@ -69,6 +66,19 @@ class SearchTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        
+        if var height = self.navigationController?.navigationBar.frame.height {
+            height += UIApplication.shared.statusBarFrame.height
+            self.tableView.contentInset = UIEdgeInsets(top: height, left: 0, bottom: 0, right: 0)
+        }
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - Table view data source
@@ -117,14 +127,6 @@ class SearchTableViewController: UITableViewController {
             DatabaseManager.shared.write(object: item)
             self.navigationController?.popViewController(animated: true)
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return " "
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20.0
     }
 }
 
