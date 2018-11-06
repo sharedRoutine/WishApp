@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -33,14 +33,14 @@
     SUBQUERY (
         $extensionItem.attachments,
         $attachment,
-        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.url&quot; OR
-        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;public.image&quot;
+        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.url" OR
+        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "public.image"
     ).@count == 2
     OR
     SUBQUERY (
         $extensionItem.attachments,
         $attachment,
-        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO &quot;com.sharedroutine.wishapp.uti&quot;
+        ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "com.sharedroutine.wishapp.uti"
     ).@count == 1
 ).@count == 1</string>
 		</dict>
