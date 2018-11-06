@@ -1075,7 +1075,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				WISH_APP_TESTING = YES;
+				WISH_APP_TESTING = NO;
 			};
 			name = Debug;
 		};
@@ -1109,7 +1109,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				WISH_APP_TESTING = YES;
+				WISH_APP_TESTING = NO;
 			};
 			name = Release;
 		};
