@@ -23,7 +23,7 @@
 		DE0F0AC4218DD79B00F1F067 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0843AF218C85DD007187C6 /* RealmSwift.framework */; };
 		DE0F0AC5218DD79C00F1F067 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE0843AF218C85DD007187C6 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE1D80EA2185BCED003C49DE /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80E92185BCED003C49DE /* SortOption.swift */; };
-		DE1D80ED2185BEAB003C49DE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */; };
+		DE1D80ED2185BEAB003C49DE /* SimpleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EC2185BEAB003C49DE /* SimpleValueCell.swift */; };
 		DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80EE2185C048003C49DE /* SelectListViewController.swift */; };
 		DE1D80F32185C593003C49DE /* SelectListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */; };
 		DE1D80F52185C77C003C49DE /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1D80F42185C77C003C49DE /* NotificationNames.swift */; };
@@ -40,6 +40,9 @@
 		DE57A4652178D782008EDBAA /* WishListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE57A4632178A4FE008EDBAA /* WishListable.swift */; };
 		DE7421BF2187782B003D379B /* WishAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7421BE2187782B003D379B /* WishAppUITests.swift */; };
 		DE7421C82187787E003D379B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7421C62187787A003D379B /* SnapshotHelper.swift */; };
+		DE8810F621922E5400C7D719 /* InAppPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8810F521922E5400C7D719 /* InAppPurchaseManager.swift */; };
+		DE8810FA219232EA00C7D719 /* DonationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8810F9219232EA00C7D719 /* DonationTableViewController.swift */; };
+		DE8810FF219373A300C7D719 /* InAppPurchaseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8810FE219373A300C7D719 /* InAppPurchaseDelegate.swift */; };
 		DE8DAA52218A30A300C2E2A5 /* iTunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DAA51218A30A300C2E2A5 /* iTunesApp.swift */; };
 		DE8DAA56218A3A7000C2E2A5 /* URLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB7397C216A229C0056E178 /* URLApp.swift */; };
 		DE8DAA57218A3A7C00C2E2A5 /* iTunesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8DAA51218A30A300C2E2A5 /* iTunesApp.swift */; };
@@ -144,7 +147,7 @@
 		DE0843BA218DCE68007187C6 /* PodLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodLicense.swift; sourceTree = "<group>"; };
 		DE0843BC218DCEEB007187C6 /* PodAck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodAck.swift; sourceTree = "<group>"; };
 		DE1D80E92185BCED003C49DE /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
-		DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		DE1D80EC2185BEAB003C49DE /* SimpleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValueCell.swift; sourceTree = "<group>"; };
 		DE1D80EE2185C048003C49DE /* SelectListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListViewController.swift; sourceTree = "<group>"; };
 		DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListTableViewCell.swift; sourceTree = "<group>"; };
 		DE1D80F42185C77C003C49DE /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
@@ -162,6 +165,9 @@
 		DE7421BE2187782B003D379B /* WishAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishAppUITests.swift; sourceTree = "<group>"; };
 		DE7421C02187782B003D379B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE7421C62187787A003D379B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = WishAppUITests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		DE8810F521922E5400C7D719 /* InAppPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseManager.swift; sourceTree = "<group>"; };
+		DE8810F9219232EA00C7D719 /* DonationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationTableViewController.swift; sourceTree = "<group>"; };
+		DE8810FE219373A300C7D719 /* InAppPurchaseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseDelegate.swift; sourceTree = "<group>"; };
 		DE8DAA51218A30A300C2E2A5 /* iTunesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesApp.swift; sourceTree = "<group>"; };
 		DEA1EDE32187456A0045B209 /* Testing.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Testing.realm; sourceTree = "<group>"; };
 		DEA1EDE72187458E0045B209 /* 372597141247a834d306c218cd70c6d6a4fe6e31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 372597141247a834d306c218cd70c6d6a4fe6e31.png; sourceTree = "<group>"; };
@@ -292,6 +298,7 @@
 		DE02E479216765D600DBD0A1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DE8810F9219232EA00C7D719 /* DonationTableViewController.swift */,
 				DE523A5121709EB900436459 /* InfoTableViewController.swift */,
 				DE57A44A21788EC9008EDBAA /* SearchTableViewController.swift */,
 				DE1D80EE2185C048003C49DE /* SelectListViewController.swift */,
@@ -350,8 +357,8 @@
 			isa = PBXGroup;
 			children = (
 				DE57A44321779BFF008EDBAA /* CreditsTableViewCell.swift */,
-				DE1D80EC2185BEAB003C49DE /* SettingsTableViewCell.swift */,
 				DE1D80F22185C593003C49DE /* SelectListTableViewCell.swift */,
+				DE1D80EC2185BEAB003C49DE /* SimpleValueCell.swift */,
 				DEB7398B216AC9E30056E178 /* WishListItemTableViewCell.swift */,
 			);
 			path = TableViewCells;
@@ -378,6 +385,7 @@
 		DE57A4622178A49F008EDBAA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				DE8810FD2193738C00C7D719 /* Delegates */,
 				DE57A4632178A4FE008EDBAA /* WishListable.swift */,
 			);
 			path = Protocols;
@@ -391,6 +399,14 @@
 				DE7421C02187782B003D379B /* Info.plist */,
 			);
 			path = WishAppUITests;
+			sourceTree = "<group>";
+		};
+		DE8810FD2193738C00C7D719 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				DE8810FE219373A300C7D719 /* InAppPurchaseDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		DE8DAA54218A397D00C2E2A5 /* Apps */ = {
@@ -444,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB73972216A0ECB0056E178 /* DatabaseManager.swift */,
+				DE8810F521922E5400C7D719 /* InAppPurchaseManager.swift */,
 				DEB73983216A2A890056E178 /* ImageManager.swift */,
 				DEB73979216A20A20056E178 /* ImportManager.swift */,
 				DEB89B0321825AFD00139C48 /* SettingsManager.swift */,
@@ -820,9 +837,11 @@
 				DE57A45721789615008EDBAA /* App.swift in Sources */,
 				DE57A4642178A4FE008EDBAA /* WishListable.swift in Sources */,
 				DE02E478216765CD00DBD0A1 /* WishListTableViewController.swift in Sources */,
+				DE8810FF219373A300C7D719 /* InAppPurchaseDelegate.swift in Sources */,
 				DE57A4462177AB18008EDBAA /* InfoHeaderView.swift in Sources */,
 				DEB73984216A2A890056E178 /* ImageManager.swift in Sources */,
 				DE0843BB218DCE68007187C6 /* PodLicense.swift in Sources */,
+				DE8810F621922E5400C7D719 /* InAppPurchaseManager.swift in Sources */,
 				DE57A45221789085008EDBAA /* AppSearchResult.swift in Sources */,
 				DE57A4492177AE59008EDBAA /* WishApp.swift in Sources */,
 				DE1D80EF2185C048003C49DE /* SelectListViewController.swift in Sources */,
@@ -830,12 +849,13 @@
 				DEB89B0221825ABF00139C48 /* DefaultsKeysExtension.swift in Sources */,
 				DE02E4662167640300DBD0A1 /* AppDelegate.swift in Sources */,
 				DE1D80EA2185BCED003C49DE /* SortOption.swift in Sources */,
-				DE1D80ED2185BEAB003C49DE /* SettingsTableViewCell.swift in Sources */,
+				DE1D80ED2185BEAB003C49DE /* SimpleValueCell.swift in Sources */,
 				DE57A44B21788EC9008EDBAA /* SearchTableViewController.swift in Sources */,
 				DE8DAA52218A30A300C2E2A5 /* iTunesApp.swift in Sources */,
 				DEB7397F216A241E0056E178 /* AppStoreURLResponse.swift in Sources */,
 				DEB73976216A14850056E178 /* WishListItem.swift in Sources */,
 				DEB7398C216AC9E30056E178 /* WishListItemTableViewCell.swift in Sources */,
+				DE8810FA219232EA00C7D719 /* DonationTableViewController.swift in Sources */,
 				DEB7398E216B61670056E178 /* UIColorExtension.swift in Sources */,
 				DE0843BD218DCEEB007187C6 /* PodAck.swift in Sources */,
 				DEB7397D216A229C0056E178 /* URLApp.swift in Sources */,
