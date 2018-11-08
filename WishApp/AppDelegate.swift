@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barStyle = .black
         UINavigationBar.appearance().tintColor = UIColor.white
         
+        InAppPurchaseManager.shared.addToPaymentQueue()
+        
         self.wishListTableViewController = WishListTableViewController(style: .grouped)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -47,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        InAppPurchaseManager.shared.removeFromPaymentQueue()
         DatabaseManager.shared.prepareForTermination()
     }
 
