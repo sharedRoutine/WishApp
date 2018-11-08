@@ -56,6 +56,7 @@ class SearchTableViewController: UITableViewController {
             if let textField = subview.subviews.filter( { view in
                 return view is UITextField
             }).first as? UITextField {
+                textField.keyboardAppearance = .dark
                 textField.tintColor = UIColor.white
                 textField.backgroundColor = UIColor.dark
                 textField.textColor = UIColor.white
