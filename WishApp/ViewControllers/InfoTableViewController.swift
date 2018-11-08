@@ -56,7 +56,7 @@ class InfoTableViewController: UITableViewController {
         
         self.tableView.register(CreditsTableViewCell.self, forCellReuseIdentifier: "CreditsCell")
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "InfoCell")
-        self.tableView.register(SettingsTableViewCell.self, forCellReuseIdentifier: "SettingsCell")
+        self.tableView.register(SimpleValueCell.self, forCellReuseIdentifier: "SettingsCell")
         
         self.tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "VersionView")
         
@@ -131,7 +131,7 @@ class InfoTableViewController: UITableViewController {
             makeUI(for: creditsCell)
             return creditsCell
         } else if section == .settings {
-            let cell: SettingsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SettingsTableViewCell
+            let cell: SimpleValueCell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath) as! SimpleValueCell
             makeUI(for: cell)
             cell.accessoryView = nil
             if row == .darkMode {
@@ -223,7 +223,9 @@ class InfoTableViewController: UITableViewController {
             UIApplication.shared.open(URL(string: "https://twitter.com/AVIROK1")!, options: [:], completionHandler: nil)
             break
         case .devCoffee:
-            UIApplication.shared.open(URL(string: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DMXRMVSS35UCQ")!, options: [:], completionHandler: nil)
+            let donationViewController: DonationTableViewController = DonationTableViewController(style: .grouped)
+            self.navigationController?.pushViewController(donationViewController, animated: true)
+            // maybe buy me a small coffee, buy me a big coffee, but me all the coffees
         case .itemSorting:
             let titles = SortOption.allCases.map({ (opt: SortOption) -> String in
                 switch opt {
