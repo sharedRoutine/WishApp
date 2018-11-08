@@ -35,3 +35,15 @@
 "UPDATING_APP" = "Updating App Information";
 "ACKNOWLEDGEMENTS" = "Acknowledgements";
 "SEARCHING" = "Searching...";
+
+"DONATIONS" = "Donations";
+"BUY_ME_A_SMALL_COFFEE" = "Buy me a coffee";
+"BUY_ME_A_LARGE_COFFEE" = "Buy me a large coffee";
+"BUY_ME_ALL_THE_COFFEES" = "Buy me all the coffees";
+"DONATION_INFO" = "Donation Info";
+"DONATION_INFO_TEXT" = "First of all: Thank you for considering a donation! You can donate any amount as often as you want but unlike usual In-App Purchases you will not receive something in return. It is your way of showing appreciation to the developer and designer. Thank you very much";
+"LOADING" = "Loading...";
+"THANK_YOU" = "Thank you!";
+"THANK_YOU_PURCHASE" = "Thank you for donating! It will be much appreciated ☺️";
+"PURCHASE_ERROR" = "Purchase Error";
+"PURCHASE_ERROR_DESCR" = "There was an issue with checking out. Please try again later and make sure you are allowed to make payments";

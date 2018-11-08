@@ -35,3 +35,15 @@
 "UPDATING_APP" = "Aktualisiere App...";
 "ACKNOWLEDGEMENTS" = "Danksagungen";
 "SEARCHING" = "Suchen...";
+
+"DONATIONS" = "Spenden";
+"BUY_ME_A_SMALL_COFFEE" = "Gib mir einen aus";
+"BUY_ME_A_LARGE_COFFEE" = "Gib mir zwei aus";
+"BUY_ME_ALL_THE_COFFEES" = "Gib mir zu viel aus";
+"DONATION_INFO" = "Spendeninformation";
+"DONATION_INFO_TEXT" = "Das Wichtigste zuert: Danke, dass du es in Betracht ziehst zu spenden! Du kannst jeden Betrag aus der Liste so oft spenden, wie du willst, jedoch bekommst du im Gegensatz zu anderen In-App Käufen aber nichts zurück. Hiermit kannst du deine Anerkennung gegenüber dem Entwickler und dem Designer zeigen. Vielen Dank";
+"LOADING" = "Laden...";
+"THANK_YOU" = "Danke!";
+"THANK_YOU_PURCHASE" = "Danke für die Spende! Wir schätzen das sehr ☺️";
+"PURCHASE_ERROR" = "Fehler beim Kauf";
+"PURCHASE_ERROR_DESCR" = "Beim Kauf ist etwas schief gelaufen. Bitte versuche es später erneut und sei dir sicher, dass du Käufe tätigen darfst";
