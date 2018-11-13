@@ -261,14 +261,22 @@ class WishListTableViewController: UITableViewController {
         let items = (tableViewSection == .items ? self.itemData.items : self.itemData.fulfilledItems)
         
         let item: WishListItem = items[indexPath.row]
-        cell.itemNameLabel.text = item.name
-        cell.itemDevelopedByLabel.text = item.developer
         
-        if let imageName = item.imageName, let iconsURL: URL = ImageManager.shared.iconsURL {
-            let fileURL: URL = iconsURL.appendingPathComponent(imageName)
-            if let imageData: Data = try? Data(contentsOf: fileURL) {
-                cell.iconImageView.image = UIImage(data: imageData)
+        if !TestingManager.shared.isTesting {
+            
+            cell.itemNameLabel.text = item.name
+            cell.itemDevelopedByLabel.text = item.developer
+            
+            if let imageName = item.imageName, let iconsURL: URL = ImageManager.shared.iconsURL {
+                let fileURL: URL = iconsURL.appendingPathComponent(imageName)
+                if let imageData: Data = try? Data(contentsOf: fileURL) {
+                    cell.iconImageView.image = UIImage(data: imageData)
+                }
             }
+        } else {
+            cell.iconImageView.backgroundColor = UIColor.darkJungleGreen
+            cell.itemNameLabel.backgroundColor = UIColor.darkJungleGreen
+            cell.itemDevelopedByLabel.backgroundColor = UIColor.darkJungleGreen
         }
         
         cell.tintColor = UIColor.white

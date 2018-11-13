@@ -92,10 +92,10 @@ class WishListItemTableViewCell: UITableViewCell {
         self.itemNameLabel.lineBreakMode = .byTruncatingTail
         self.contentView.addSubview(self.itemNameLabel)
         
-        self.itemNameLabel.bottomAnchor.constraint(equalTo: self.iconImageView.centerYAnchor).isActive = true
+        self.itemNameLabel.bottomAnchor.constraint(equalTo: self.iconImageView.centerYAnchor, constant: -2.5).isActive = true
         self.itemNameLabel.leftAnchor.constraint(equalTo: self.iconImageView.rightAnchor, constant: 10.0).isActive = true
-        self.itemNameLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -5.0).isActive = true
-        self.itemNameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 10.0).isActive = true
+        self.itemNameLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -10.0).isActive = true
+        self.itemNameLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20.0).isActive = true
         
         self.itemDevelopedByLabel = UILabel(frame: .zero)
         self.itemDevelopedByLabel.textColor = UIColor.white
@@ -103,10 +103,10 @@ class WishListItemTableViewCell: UITableViewCell {
         self.itemDevelopedByLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.itemDevelopedByLabel)
         
-        self.itemDevelopedByLabel.topAnchor.constraint(equalTo: self.iconImageView.centerYAnchor).isActive = true
+        self.itemDevelopedByLabel.topAnchor.constraint(equalTo: self.iconImageView.centerYAnchor, constant: 2.5).isActive = true
         self.itemDevelopedByLabel.leftAnchor.constraint(equalTo: self.itemNameLabel.leftAnchor).isActive = true
         self.itemDevelopedByLabel.rightAnchor.constraint(equalTo: self.itemNameLabel.rightAnchor).isActive = true
-        self.itemDevelopedByLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 10.0).isActive = true
+        self.itemDevelopedByLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 20.0).isActive = true
         
         self.separatorView = UIView(frame: .zero)
         self.separatorView.isHidden = true
