@@ -100,17 +100,23 @@ class SearchTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: WishListItemTableViewCell = tableView.dequeueReusableCell(withIdentifier: "AppCell", for: indexPath) as! WishListItemTableViewCell
+        cell.backgroundColor = UIColor.dark
         
         let apps: [App] = self.searchResult!.paidApps
         if indexPath.row < apps.count {
             let app: App = apps[indexPath.row]
-            cell.itemNameLabel.text = app.name
-            cell.itemDevelopedByLabel.text = app.developer
+            if !TestingManager.shared.isTesting {
+                cell.itemNameLabel.text = app.name
+                cell.itemDevelopedByLabel.text = app.developer
+                cell.iconImageView.sd_setImage(with: URL(string: app.iconFile), placeholderImage: nil, options: .highPriority, completed: nil)
+            } else {
+                cell.iconImageView.backgroundColor = UIColor.darkJungleGreen
+                cell.itemNameLabel.backgroundColor = UIColor.darkJungleGreen
+                cell.itemDevelopedByLabel.backgroundColor = UIColor.darkJungleGreen
+            }
             cell.priceString = (app.isFree ? "FREE".localized : self.priceFormatter.string(from: NSNumber(value: app.price)))
-            cell.iconImageView.sd_setImage(with: URL(string: app.iconFile), placeholderImage: nil, options: .highPriority, completed: nil)
         }
         cell.shouldShowSeparator = indexPath.row != apps.count-1
-        cell.separatorColor = UIColor.dark
         return cell
     }
     
