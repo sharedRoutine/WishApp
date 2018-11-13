@@ -147,7 +147,7 @@ extension SearchTableViewController : UISearchResultsUpdating {
 
 extension SearchTableViewController : UISearchBarDelegate {
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchString: String = searchController.searchBar.text, searchString.count > 0 else {
+        guard let searchString: String = self.searchController.searchBar.text, searchString.count > 0 else {
             self.searchResult = nil
             self.tableView.reloadData()
             return

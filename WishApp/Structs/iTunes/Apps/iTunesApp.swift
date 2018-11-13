@@ -64,7 +64,8 @@ class iTunesApp : Decodable {
         if storeIDContainer.contains(.id) {
             self.storeIdentifier = try storeIDContainer.decode(String.self, forKey: .id)
         } else if storeIDContainer.contains(.trackId) {
-            self.storeIdentifier = try storeIDContainer.decode(String.self, forKey: .trackId)
+            let storeID: Int = try storeIDContainer.decode(Int.self, forKey: .trackId)
+            self.storeIdentifier = "\(storeID)"
         } else {
             fatalError("Invalid JSON Data")
         }
