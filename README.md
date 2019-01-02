@@ -45,8 +45,7 @@ This brings me to a possible to-do:
 ## Copyright / License
 
 - [WishApp's LICENSE](https://github.com/sharedRoutine/WishApp/blob/master/LICENSE) applies
-- You may not use the icons of this app in any way. [Icons made by Aviorrok for WishApp](https://twitter.com/AVIROK1))
+- You may not use the icons of this app in any way. [Icons made by Aviorrok for WishApp](https://twitter.com/AVIROK1)
 - All licenses of third party libraries used in this app apply. (See [Acknowledgements.plist](https://github.com/sharedRoutine/WishApp/blob/master/WishApp/Acknowledgements.plist) and [Realm.plist](https://github.com/sharedRoutine/WishApp/blob/master/WishApp/Realm.plist))
-- You may use parts of the code for your own private use and for . If you plan on using a large portion of this apps' code in a commerical app, please contact me before you attempt to to so.
 
 Otherwise enjoy reading the source code and if you have any questions, let me know!
