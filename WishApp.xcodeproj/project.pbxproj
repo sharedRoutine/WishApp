@@ -133,6 +133,8 @@
 		67055DB79C6E688DECAEE47E /* Pods-WishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.release.xcconfig"; sourceTree = "<group>"; };
 		6D3CAA0E4C0CEB0400CFB269 /* Pods-WishApp-WishAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-WishAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		944DFC002F51B2100E014727 /* Pods_WishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C611266734C4621246442145 /* Pods-WishApp-WishAppUITests.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp-WishAppUITests.testing.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp-WishAppUITests/Pods-WishApp-WishAppUITests.testing.xcconfig"; sourceTree = "<group>"; };
+		CC828C6B2E30DEAC19E12910 /* Pods-WishApp.testing.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishApp.testing.xcconfig"; path = "Pods/Target Support Files/Pods-WishApp/Pods-WishApp.testing.xcconfig"; sourceTree = "<group>"; };
 		DE02E4622167640300DBD0A1 /* WishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02E4652167640300DBD0A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE02E46A2167640300DBD0A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -496,6 +498,8 @@
 				58449BDCAFEC416A8E3CBFA6 /* Pods-WishApp-ImportExtension.release.xcconfig */,
 				0295BC2EAC2AFBC14AB90870 /* Pods-WishApp-WishAppUITests.debug.xcconfig */,
 				6D3CAA0E4C0CEB0400CFB269 /* Pods-WishApp-WishAppUITests.release.xcconfig */,
+				CC828C6B2E30DEAC19E12910 /* Pods-WishApp.testing.xcconfig */,
+				C611266734C4621246442145 /* Pods-WishApp-WishAppUITests.testing.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -511,12 +515,11 @@
 				DE7421D52187B1B7003D379B /* Increase Version Number */,
 				DE02E45E2167640300DBD0A1 /* Sources */,
 				DE02E45F2167640300DBD0A1 /* Frameworks */,
-				DEA1EE05218746740045B209 /* Copy Testing Data if needed */,
 				DE02E4602167640300DBD0A1 /* Resources */,
 				DEB7393B21676CA50056E178 /* Embed App Extensions */,
 				9DFFF2D97F88D1909D6EC2E3 /* [CP] Embed Pods Frameworks */,
 				DE0F0AC6218DD79C00F1F067 /* Embed Frameworks */,
-				DE0843B5218C8619007187C6 /* ShellScript */,
+				DE0843B5218C8619007187C6 /* Strip Realm Frameworks */,
 			);
 			buildRules = (
 			);
@@ -751,7 +754,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WishApp/Pods-WishApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE0843B5218C8619007187C6 /* ShellScript */ = {
+		DE0843B5218C8619007187C6 /* Strip Realm Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -760,6 +763,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Strip Realm Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -803,24 +807,6 @@
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
-		};
-		DEA1EE05218746740045B209 /* Copy Testing Data if needed */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Testing Data if needed";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"Checking if we should copy testing data: ${WISH_APP_TESTING}\"\ntest_target_path=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Testing\"\ntest_data_path=\"${PROJECT_DIR}/WishApp/Testing\"\nif [ \"${WISH_APP_TESTING}\" == \"YES\" ]; then\necho \"Creating Icons Folder\"\nmkdir -p \"$test_target_path/Icons\"\necho \"Copying Icons\"\ncp -rf \"$test_data_path/Icons\" \"$test_target_path\"\necho \"Copying Testing Data\"\ncp -f \"$test_data_path/Testing.realm\" \"$test_target_path/Testing.realm\"\necho \"Copying done\"\nelif [ \"${WISH_APP_TESTING}\" == \"NO\" ]; then\nif [ -d \"$test_target_path\" ]; then\necho \"Removing Test Data\"\nrm -rf \"$test_target_path\"\nfi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1095,7 +1081,6 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				WISH_APP_TESTING = NO;
 			};
 			name = Debug;
 		};
@@ -1129,9 +1114,152 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
-				WISH_APP_TESTING = NO;
 			};
 			name = Release;
+		};
+		DE4C140C219ED9630061FBF1 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Testing;
+		};
+		DE4C140D219ED9630061FBF1 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC828C6B2E30DEAC19E12910 /* Pods-WishApp.testing.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WishApp/WishApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PE75LA624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				INFOPLIST_FILE = WishApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D WISH_APP";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp;
+				PRODUCT_MODULE_NAME = "$(PROJECT_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Testing;
+		};
+		DE4C140E219ED9630061FBF1 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_ENTITLEMENTS = ImportExtension/ImportExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PE75LA624;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ImportExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishApp.ImportExtension;
+				PRODUCT_MODULE_NAME = ImportExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WishApp-Swift.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Testing;
+		};
+		DE4C140F219ED9630061FBF1 /* Testing */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C611266734C4621246442145 /* Pods-WishApp-WishAppUITests.testing.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PE75LA624;
+				INFOPLIST_FILE = WishAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharedroutine.WishAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WishApp;
+			};
+			name = Testing;
 		};
 		DE7421C32187782B003D379B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1238,6 +1366,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE02E4722167640500DBD0A1 /* Debug */,
+				DE4C140C219ED9630061FBF1 /* Testing */,
 				DE02E4732167640500DBD0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1247,6 +1376,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE02E4752167640500DBD0A1 /* Debug */,
+				DE4C140D219ED9630061FBF1 /* Testing */,
 				DE02E4762167640500DBD0A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1256,6 +1386,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE7421C32187782B003D379B /* Debug */,
+				DE4C140F219ED9630061FBF1 /* Testing */,
 				DE7421C42187782B003D379B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1265,6 +1396,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEB7393921676CA50056E178 /* Debug */,
+				DE4C140E219ED9630061FBF1 /* Testing */,
 				DEB7393A21676CA50056E178 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
