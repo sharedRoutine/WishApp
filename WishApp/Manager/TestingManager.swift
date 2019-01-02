@@ -14,7 +14,7 @@ class TestingManager: NSObject {
     
     public var isTesting: Bool {
         get {
-            return false
+            return ProcessInfo.processInfo.arguments.contains("WISH_APP_TESTING") || ProcessInfo.processInfo.environment["WISH_APP_TESTING"] == "YES"
         }
     }
     
